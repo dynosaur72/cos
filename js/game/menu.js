@@ -47,7 +47,7 @@ function Play(message){
 		N("바로 시작하는구나! 좋아!");
 		N("No messing around with reading the About Me or the About This Game sections or--");
 		p("쉿.");
-		N("Fine, fine.");
+		N("알겠어, 알겠어.");
 	}
 	// Asked both
 	if($.asked_about && $.asked_credits){
@@ -56,12 +56,12 @@ function Play(message){
 		N("NO IDEA");
 	// Asked either
 	}else if($.asked_about || $.asked_credits){
-		N("그래, 그러!");
+		N("그래, 그러자!");
 	}
 
 	N("4년 전, 2010년으로 돌아가보자...");
 	p("그게 4년 전이었다고?!");
-	N("...내 인생을 영원히 바꿔버린 그 저녁으로 말이.");
+	N("...내 인생을 영원히 바꿔버린 그 저녁으로 말이야.");
 
 	N("친애하는 플레이어 씨. 이 게임이 어떻게 끝날거라 생각해?");
 
@@ -70,9 +70,9 @@ function Play(message){
 			$.main_menu_convo_1 = 1;
 
 			p(message);
-			N("Yes. That is exactly how this game ends.");
-			p("Really?");
-			N("No.");
+			N("맞아. 이 게임은 정확히 그렇게 끝나.");
+			p("진짜?");
+			N("아니.");
 			Play_2();
 		},
 		"보니까 스타벅스에서 레딧질이나 하는걸로.": function(message){
@@ -83,17 +83,17 @@ function Play(message){
 			p("에이, 너 그냥 뺀질거리는 거잖아."); //너 그냥 할일을 미루고 있는 거겠지.
 			N("네가 할 말은 아닐텐데.");
 			p("...인정.");
-			N("어쨌든...");
+			N("아무튼...");
 			Play_2();
 		},
 		"<b>전부 피로 끝나지</b>": function(message){ // awk tl (IT ALL ENDS IN BLOOD)
 			$.main_menu_convo_1 = 3;
 
 			p(message);
-			N("Uh, compared to that, I guess my story isn't that tragic.");
+			N("엄, 그거에 비해서는 내 이야기가 그렇게 비극적이진 않지.");
 			N("Although that's kind of a glass one-hundredths-full interpretation.");
-			p("blooooood.");
-			N("Anyway...");
+			p("피이이.");
+			N("아무튼...");
 			Play_2();
 		}
 	});
@@ -103,8 +103,8 @@ function Play(message){
 function Play_2(){
 
 	if(!$.asked_about){
-		N("If you didn't skip the About This Game section, you'd know this is a very personal story.");
-		p("Shush.");
+		N("네가 <게임에 대한 정보> 섹션을 씹지 않았더라면, 이 게임이 굉장히 개인적인 이야기라는 걸 알겠지.");
+		p("쉿.");
 	}
 
 	N("이 게임은 나, 내 부모님, 내 전 남친이 전부 실제로 했던 대화를 담고 있어.");
@@ -117,7 +117,7 @@ function Play_2(){
 			$.main_menu_convo_2 = 2;
 
 			p(message);
-			N("Exactly.");
+			N("그 말이야."); // awk tl "Exactly."
 			p(". . .");
 			Play_3();
 		},
@@ -126,7 +126,7 @@ function Play_2(){
 
 			p(message);
 			N("<b>인생은</b> 우울한거야.");
-			p("So that's a yes.");
+			p("그래서 그건 맞다는 거지."); // So that's a yes.
 			Play_3();
 		},
 		"이 '진실인' 게임이 거짓으로 가득 차 있다고?": function(message){
@@ -151,14 +151,14 @@ function Play_3(){
 
 	var whatISay;
 	switch($.main_menu_convo_1){
-		case 1: whatISay = "This game doesn't end with gay unicorns. "; break;
-		case 2: whatISay = "This game is a coming-out, a coming-of-age, a coming-to-terms. "; break;
-		case 3: whatISay = "This game ends not in blood, but in tears. "; break;
+		case 1: whatISay = "이 게임은 게이 유니콘으로 끝나지 않아. "; break;
+		case 2: whatISay = "이 게임은 커밍아웃을 하고, 어른이 되고, 현실과 타협하는 게임이야. "; break;
+		case 3: whatISay = "이 게임은 피가 아닌 눈물로 끝나. "; break;
 	}
 	switch($.main_menu_convo_2){
-		case 1: whatISay += "Sorry for being a bit of a downer."; break;
-		case 2: whatISay += "And there are no right answers."; break;
-		case 3: whatISay += "And it's full of lies."; break;
+		case 1: whatISay += "우울하게 굴어서 미안."; break;
+		case 2: whatISay += "그리고 옳은 대답은 없어."; break; // And there are no right answers.
+		case 3: whatISay += "그리고 거짓말로 가득 차 있지."; break;
 	}
 	N(whatISay);
 
@@ -166,7 +166,7 @@ function Play_3(){
 	Show("nicky","coffee_nicky_drink");
 	Show("cup",null);
 
-	p("Hey, I just said that!");
+	p("야, 그거 내가 방금 한 말이잖아!");
 
 	// HACK - Just clear dialogue & stuff.
 	Wait(1000);
@@ -180,14 +180,14 @@ function Play_3(){
 	Show("nicky","coffee_nicky_still_2");
 	Wait(500);
 	
-	N("When you play...");
-	N("Choose your words wisely.");
-	N("Every character will remember everything you say. Or don't say.");
-	p("Yeah. You even brought up my choices in this MAIN MENU.");
-	N("Exactly.");
+	N("플레이할 때...");
+	N("할 말을 조심해서 고르도록 해.");
+	N("모든 캐릭터들은 네가 한 말들을 전부 기억할 거야. 네가 하지 않은 말들도.");
+	p("그래, 메인 메뉴에서까지 내 선택을 들먹였잖아.");
+	N("내 말이."); //그래. 요점이 그거야. Exactly.
 
 	N(". . .");
-	N("Some things are hard not to remember.");
+	N("어떤 것들은 기억하지 않기 정말 어렵거든.");
 	
 	Clear();
 	Start_Jack_1();
@@ -201,7 +201,7 @@ function Credits(message){
 	if($.asked_about){
 		SipCoffee(message);
 	}else{
-		SipCoffee("Who are you?");
+		SipCoffee("넌 누구니니?");
 	}
 	
 	N("Ah, how rude of me! Let me introduce myself.");
