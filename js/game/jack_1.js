@@ -18,18 +18,18 @@ function Start_Jack_1(){
 
 	/////////////////////////////
 
-	j("And when he simply announces,");
-	j("'I bought the airline.'");
-	j("That was positively priceless!");
-	n("Is that what he said?");
-	n("I missed out what everyone in the theater was laughing about.");
-	j("You either need subtitles, or to clean your ears more often.");
-	j("So how did you interpret the ending?");
+	j("그리고 나서 걔가 그냥,");
+	j("\"내가 이 항공사를 사들였거든.\"");
+	j("이라고 말하는 장면, 완전 쩔었어!");
+	n("걔가 한 말이 그거였어?");
+	n("영화관에서 다 웃고 있었는데 나만 못 들었어.");
+	j("너는 자막을 붙여주던지 귀를 파던지 해야할 것 같다.");
+	j("그래서 엔딩 어떻게 해석했어, 넌?");
 
 	Choose({
-		"It was totally all a dream.": Inception_Dream,
-		"He's got to be back in the real world!": Inception_Awake,
-		"Doesn't matter. Cobbs just finally let go.": Inception_Neither
+		"그거 완전 다 꿈이었잖아.": Inception_Dream,
+		"다시 현실로 돌아온 게 틀림없어!": Inception_Awake,
+		"상관없어. Cobbs just finally let go.": Inception_Neither // 콥스가 결국(드디어) 모든걸 놓았잖아.
 	});
 
 }
