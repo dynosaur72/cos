@@ -15,12 +15,12 @@ function Start_Dinner_1(){
 	////////////////////////////
 
 	Wait(2500);
-	n("다들 어디지?");
+	n("다들 어딨지?");
 	n(". . .");
 
 	Choose({
 		"엄마아아?": Waiting_1,
-		"아빠아?": Waiting_1,
+		"아빠아아?": Waiting_1,
 		"저기, 아무도 없어요?": Waiting_1
 	});
 
@@ -34,7 +34,7 @@ function Waiting_1(message){
 	n(". . .");
 
 	Choose({
-		"[밥 먹기 시작]": function(message){
+		"[밥 먹기 시작하기]": function(message){
 			$.waiting_action = "eat";
 			Waiting_2(message);
 		},
@@ -64,7 +64,7 @@ function Waiting_2(message){
 	Show("nicky","dinner_nicky_defiant");
 
 	Choose({
-		"그만 좀 울어, 이 불협화음 내는 고양이 시계!": function(message){
+		"그만 좀 울어, 이 불협화음 내는 고양이 시계야!": function(message){
 			n(message);
 
 			Show("mom","mom_stand");
