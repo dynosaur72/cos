@@ -15,13 +15,13 @@ function Start_Dinner_1(){
 	////////////////////////////
 
 	Wait(2500);
-	n("Where is everyone?...");
+	n("다들 어디지?");
 	n(". . .");
 
 	Choose({
-		"Moooom?": Waiting_1,
-		"Daaaaad?": Waiting_1,
-		"Hello, anybody?": Waiting_1
+		"엄마아아?": Waiting_1,
+		"아빠아?": Waiting_1,
+		"저기, 아무도 없어요?": Waiting_1
 	});
 
 }
@@ -34,15 +34,15 @@ function Waiting_1(message){
 	n(". . .");
 
 	Choose({
-		"[start eating]": function(message){
+		"[밥 먹기 시작]": function(message){
 			$.waiting_action = "eat";
 			Waiting_2(message);
 		},
-		"[wait some more]": function(message){
+		"[좀 더 기다리기]": function(message){
 			$.waiting_action = "wait";
 			Waiting_2(message);
 		},
-		"[play with food]": function(message){
+		"[음식 갖고 장난치기]": function(message){
 			$.waiting_action = "play";
 			Waiting_2(message);
 		}
@@ -64,7 +64,7 @@ function Waiting_2(message){
 	Show("nicky","dinner_nicky_defiant");
 
 	Choose({
-		"Cut the crying, cacophonous cat clock!": function(message){
+		"그만 좀 울어, 이 불협화음 내는 고양이 시계!": function(message){
 			n(message);
 
 			Show("mom","mom_stand");
@@ -72,47 +72,47 @@ function Waiting_2(message){
 			PlaySound("clock","dinner_ticking",{loop:-1});
 
 			if($.im_a_poet){
-				m("Did you learn poetry from a friend?");
+				m("친구한테 시짓기라도 배웠니?");
 			}else{
-				m("Poetic.");
+				m("시적이구나.");
 			}
 
 			Show("nicky","dinner_nicky_sit");
-			n("Oh, hey mom.");
+			n("아, 엄마 오셨어요.");
 			
 			Waiting_End();
 		},
-		"Ugh, why did we get that thing?": function(message){
+		"으윽. 저건 왜 들여놓은거야?": function(message){
 			n(message);
 
 			Show("mom","mom_stand");
 			Show("clock","clock_ticking");
 			PlaySound("clock","dinner_ticking",{loop:-1});
 
-			m("Your grandfather gave it to us.");
+			m("네 할아버지가 우리에게 주셨단다.");
 
 			Show("nicky","dinner_nicky_sit");
-			n("Oh! Hey mom.");
+			n("아! 엄마 오셨어요.");
 			
 			Waiting_End();
 		},
-		"Meow! Meow! Meow! Meow!": function(message){
+		"냐옹! 냐옹! 냐옹! 냐옹!": function(message){
 			
-			n("Meow.");
-			n("Meow!");
+			n("냐옹.");
+			n("냐옹!");
 
 			Show("nicky","dinner_nicky_outrage");
-			n("MEOW!");
+			n("<b>냐옹!!!</b>");
 
 			Show("mom","mom_stand");
 
-			m("Nick, what are you doing?...");
+			m("닉, 뭐하는거니?...");
 
 			Show("clock","clock_ticking");
 			PlaySound("clock","dinner_ticking",{loop:-1});
 			Show("nicky","dinner_nicky_sit");
 
-			n("MEOOOhhhh didn't see you. Ahem. Hey mom.");
+			n("냐아아오오오오아 거기 계셨네요. 흠흠. 엄마 오셨어요.");
 
 			Waiting_End();
 		}
