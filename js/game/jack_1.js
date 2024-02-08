@@ -44,7 +44,7 @@ function Inception_Dream(message){
 	j("You're a bit of a downer, aren't you?");
 
 	Choose({
-		"Yup, I'm just a sad sack of sadness.": Sadsack,
+		"그래, 나는 슬픔밖에 없는 슬픔 덩어리다.": Sadsack,
 		"Sometimes... but not when I'm with you.": function(message){
 			$.im_a_poet = true;
 
@@ -56,13 +56,13 @@ function Inception_Dream(message){
 			n("Anywho...");
 			Thanks();
 		},
-		"I'm just a realist.": function(message){
+		"난 현실주의자일 뿐이야.": function(message){
 			$.hippies = true;
 
 			n(message);
-			j("You need more positive thinking in your life.");
+			j("넌 긍정적인 사고가 좀 필요해.");
 			n("And YOU need to stop being such a new-age hippie.");
-			n("Anywho...");
+			n("어쨌든...");
 			Thanks();
 		}
 	});
@@ -88,7 +88,7 @@ function Inception_Awake(message){
 			n(message);
 			j("I believe that was the purpose.");
 			n("Mission accomplished, then.");
-			n("Anywho...");
+			n("어쩄든...");
 			Thanks();
 		},
 		"BWOOOOOOOOOOONG": function(message){
@@ -104,14 +104,14 @@ function Inception_Neither(message){
 	$.inception_answer = "neither";
 
 	n(message);
-	j("Oh?");
-	n("He didn't even bother looking to see if the top fell!");
-	n("Lies, truths, or half-truths... Cobbs no longer cares.");
-	n("He's finally happy, and that's all that matters.");
-	j("You either are being quite poetic, or quite depressing.");
+	j("그래?");
+	n("팽이가 넘어지는지 확인조차 하지 않았잖아!");
+	n("거짓말이든, 진실이든, 그 중간이든... 콥스는 더 이상 상관하지 않는거지."); //cobbs no longer cares.
+	n("결국은 행복해졌으니까. 그거면 된거야.");
+	j("너 지금 되게 시적으로 말하는거나 우울하게 말하는거나, 둘 중 하나다."); // You either are being quite poetic, or quite depressing
 
 	Choose({
-		"I'm a poet, and I didn't even know it.": function(message){
+		"나도 모르는 사이에 시인이 되어있었네.": function(message){
 
 			$.im_a_poet = true;
 
@@ -123,17 +123,17 @@ function Inception_Neither(message){
 			Thanks();
 
 		},
-		"Nah, I'm just a sad sack of sadness.": Sadsack,
-		"Or both.":function(message){
+		"그래, 나는 슬픔밖에 없는 슬픔 덩어리다.": Sadsack,
+		"둘 다일수도 있지.":function(message){
 
 			$.hippies = true;
 			$.im_a_poet = true;
 
 			n(message);
-			n("POETRY IS PAIN. ART IS SUFFERING.");
-			j("You sound like my mother.");
-			n("Your parents are <i>such</i> new-age hippies.");
-			n("Anywho...");
+			n("시는 고통이요 예술은 시달림이다.");
+			j("우리 엄마가 할 말같네.");
+			n("너네 부모님은 <b>조온나</b> 뉴에이지 히피들이잖아."); // your parents are <i>such</i> new-age hippies; <i>조온나게</i>
+			n("어쨌든...");
 			Thanks();
 
 		}
@@ -155,37 +155,37 @@ function Sadsack(message){
 
 function Thanks(){
 	
-	n("So yeah! Thanks for taking me out to watch Inception!");
-	j("My pleasure, Nicky.");
-	j("You should parody Inception in that odd web game of yours!");
-	n("Mmm, maybe maybe.");
-	n("Let's meet again tomorrow evening!");
+	n("<인셉션> 보여줘서 고마워!"); // so yeah! 는 겹쳐서 제거
+	j("별말씀을.");
+	j("그 네가 만드는 웹게임에서 <인셉션> 패러디해보는건 어때?");
+	n("으음, 그래볼까.");
+	n("내일 저녁에 다시 만나자!");
 
-	j("Although...");
-	n("Hope I can convince the parents to let me out overnight.");
+	j("근데 솔직히...");
+	n("부모님이 하룻밤 외출하는걸 허락해주신다면 좋겠는데."); // Hope I can convince the parents to let me out overnight
 
-	j("I wish you didn't tell your mom and dad we were just studying, when we were actually at the cinema.");
-	n("I'll pretend we'll be cramming for the midterms all nigh-- huh?");
+	j("너네 부모님한테 공부하고 있었다고 뻥쳐놓고 영화관 가는 거, 안 그랬으면 좋겠는데.");
+	n("그냥 밤새 중간고사 벼락치기 하는 척 하면-- ?");
 
-	j("You can't keep hiding like this.");
-	n("Jack...");
+	j("계속 이렇게 숨길 순 없잖아.");
+	n("잭...");
 
 	Choose({
-		"They can never, ever know.": function(message){
+		"절대, 절대 못 말해.": function(message){ // they can never, ever know.
 			$.coming_out_readiness="no";
 			n(message);
 			j("Really, never?");
 			Hiding();
 		},
-		"I wish I could tell them, too.": function(message){
+		"나도 말할 수 있었으면 좋겠어.": function(message){
 			$.coming_out_readiness="yes";
 			n(message);
 			Hiding();
 		},
-		"I'm not ready to tell them yet.": function(message){
+		"나 아직 말할 준비가 안 됐어.": function(message){
 			$.coming_out_readiness="maybe";
 			n(message);
-			j("I can help you be ready.");
+			j("내가 준비하는거 도와줄 수 있어.");
 			Hiding();
 		}
 	});
@@ -194,40 +194,40 @@ function Thanks(){
 
 function Hiding(){
 
-	j("Nicky, hiding like this is eating away at your soul.");
+	j("니키, 이렇게 숨기는게 널 괴롭히고 있잖아.");
 
 	if($.inception_answer=="awake"){
-		j("Like you said, what's the point of living a lie?");
+		j("Like you said, what's the point of living a lie?"); //LINE 78
 	}
 	if($.inception_answer=="dream"){
-		j("It's... how'd you put it... 'a big fat lie'?");
+		j("It's... how'd you put it... 'a big fat lie'?"); //LINE 43
 	}
 
 	if($.sadsack){
-		j("When you said just now you're a sadsack?");
-		j("I know you weren't joking. Not really.");
+		j("아까 네가 슬픔 덩어리라고 한 거 있잖아.");
+		j("농담이 아니었던거 알아, 사실은."); //I know you weren't joking. Not really.
 	}
 
-	n("Jack, come on.");
-	j("I came out to my parents last year.");
+	n("잭, 제발 좀.");
+	j("난 작년에 부모님께 커밍아웃 했어.");
 	if($.hippies){
-		n("That's NOT a fair comparison.");
-		n("LIKE I SAID, you and your parents are a bunch of new-age hippies.");
-		n("When I'm at your place, I can't tell if all the smoke is incense or marijuana.");
-		j("Hey! We only smoke weed every other day!");
-		n("Heh.");
-		j("The point is, my parents supported my coming out.");
+		n("그런 식으로 비교하는거 완전 불공평하거든.");
+		n("내가 말한 것처럼, 너랑 너네 부모님은 완전 뉴에이지 히피들이잖아.");
+		n("너네 집에 가면 연기가 향에서 나는건지 마리화나에서 나는건지 모르겠어.");
+		j("야! 우리 대마초 이틀에 한 번밖에 안 피거든?");
+		n("ㅋㅋㅋ"); // Heh.
+		j("요점은, 우리 부모님은 내가 커밍아웃했을 때도 내 편이었단 말이야.");
 	}else{
-		j("And they were very supportive!");
+		j("그리고 부모님은 내 편이었어!");
 	}
 
-	j("You're in Canada now. A lot of people here are LGBT friendly.");
-	j("How do you know your parents won't be supportive of you, too?");
+	j("여긴 캐나다야. 다들 LGBT에 대해 우호적이라고."); // lots of ppl are lgbt friendly
+	j("너네 부모님도 네 편일지 어떻게 알아?");
 
 	Choose({
-		"Asian parents are usually very homophobic.": Hiding_2,
-		"I don't know... I guess I haven't tried...": Hiding_2,
-		"They don't support anything but STUDYING.": Hiding_2
+		"동양인 부모님들은 보통 엄청 호모포빅하거든.": Hiding_2,
+		"모르겠어... 안 해봐서 모르는 걸지도 모르지.": Hiding_2,
+		"우리 부모님은 공부 말곤 관심도 없으시거든.": Hiding_2
 	});
 
 }
@@ -237,36 +237,36 @@ function Hiding_2(message){
 	n(message);
 
 	if($.coming_out_readiness=="no"){
-		n("Again... They can never, ever know.");
+		n("다시 말하지만... 절대, 절대 말할 수 없어.");
 	}
 
-	j("You have trust issues.");
-	j("You're even texting me instead of calling...");
-	j("...because you think your parents might listen in.");
+	j("너 진짜 사람을 못 믿는구나."); // you have trust issues. 부모님을 못 믿는구나
+	j("지금 전화 대신 문자 하는것도...");
+	j("...부모님이 엿들을까봐 그러는 거잖아.");
 
-	n("They would!");
+	n("엿듣는다니까!");
 
-	j("This mode of communication.");
-	j("It's imprecise, impersonal, impossible to truly connect.");
+	j("이런 소통의 방식은."); //this mode of communication.
+	j("부정확하고, impersonal하고, 진정으로 공감이 불가능하다고."); // 정확하지 못하고, 개인적이지도 않고,
 
 	if($.im_a_poet){
-		n("Heh. You're an amateur poet like me, apparently.");
+		n("하, 너도 아마추어 시인으로 전직하셨냐.");
 	}else{
-		n("It's not too bad...");
+		n("그렇게 나쁘진 않아...");
 	}
 
 	if($.coming_out_readiness=="yes"){
-		j("You yourself just said you wish you could tell them.");
-		j("Tell them.");
+		j("네가 방금 말할 수 있었다면 좋겠다고 했잖아.");
+		j("말씀드려.");
 	}else{
-		j("Nicky.");
+		j("니키.");
 	}
-	j("Tell them about us. Tonight.");
+	j("오늘 밤. 우리에 대해 전부 말씀드려.");
 
 	Choose({
-		"Tonight?! Heck no.": Hiding_3,
-		"Sigh... I'll try my best.": Hiding_3,
-		"I'll just carefully hint at it.": Hiding_3
+		"오늘 밤?! 안돼!": Hiding_3,
+		"하아... 노력해볼게.": Hiding_3,
+		"그냥 살짝 힌트만 줘볼게.": Hiding_3
 	});
 
 }
@@ -275,33 +275,34 @@ function Hiding_3(message){
 	
 	n(message);
 	j(". . .");
-	n("I don't want to freak them out too much.");
-	n("Still need to convince them to let me stay at your place tomorrow night.");
-	n("I'll tell 'em I'm studying with you again.");
+	n("너무 놀래키면 안되니까.");
+	n("내일 밤 너네 집에서 자는것도 아직 허락 못 받았고.");
+	n("너랑 또 공부하러 간다고 말해놓을게.");
 	j(". . .");
-	n("It's dinnertime. I'm heading downstairs now.");
+	n("저녁시간이다. 나 내려가볼게.");
 
-	j("Hey... I agree.");
-	n("Huh?");
-	j("With your thoughts on the movie ending, that is.");
+	j("있잖아... 나도 동의해.");
+	n("응?");
+	j("영화 엔딩에 대한 네 해석.");
 	switch($.inception_answer){
 		case "dream": j("I think Cobbs was still dreaming, living a lie."); break;
 		case "awake": j("I think Cobbs reconnected with his real family, in the real world."); break;
-		case "neither": j("I think it doesn't matter, as long as Cobbs is happy."); break;
+		case "neither": j("결국 콥스가 행복한 이상 상관없는거야."); break;
 	}
-	n("Oh.");
-	j("Okay.");
+	n("아.");
+	j("그래.");
 	if($.coming_out_readiness=="maybe"){
-		j("Hope you changed your mind about being 'not ready to tell them yet'.");
+		j("'아직 준비 안됐다'는 거, 마음 바뀌었길 바라.");
 	}
-	j("Good luck. Text me in an hour.");
+	j("잘돼길 빌어. 한 시간 후에 문자 줘.");
 
-	var insult = "";
-	if($.hippies) insult+=" new-age hippie";
-	if($.im_a_poet) insult+=" amateur poet";
-	n("See ya.");
-	if(insult!=""){
-		n("You"+insult+".");
+	n("이따 봐.");
+	if($.hippies && $.im_a_poet){
+		n("이 뉴에이지 히피 아마추어 시인아.");
+	}else if($.hippies && !$.im_a_poet){
+		n("이 뉴에이지 히피야.");
+	}else if(!$.hippies && $.im_a_poet){
+		n("이 아마추어 시인아.");
 	}else{
 		n("You goof.");
 	}
