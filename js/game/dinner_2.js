@@ -10,7 +10,7 @@ function Start_Dinner_2(){
 
 	switch($.waiting_action){
 		case "eat":
-			m("Oh, you started eating without me. You're very impatient.");
+			m("이, 나 없이 식사 시작했구나. You're very impatient.");
 			n("...right.");
 			break;
 		case "wait":
