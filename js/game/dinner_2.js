@@ -83,18 +83,18 @@ function Start_Dinner_2_2(message){
 	m("좋아."); //Good. 다행이구나. 좋아.
 	m("너 진짜 " + $.studying_subject + " 성적 좀 올려야겠더구나.");
 	n(". . .");
-	m("그래서, 엄마는 내일 도서관에 있을건데. So, I'll be at the library tomorrow.");
-	m("아들도 거기서 공부할거야? Will I see you studying there?");
-	n("아, 전 잭네 집 가서 공부하려고요. Actually, I'm gonna study at Jack's place.");
-	m("또? Again?");
-	m("너 그 애랑 많이 놀더라. You spend a lot of time with him."); //그 애랑 되게 잘 놀더라.
+	m("그래서, 엄마는 내일 도서관에 있을건데."); //So, I'll be at the library tomorrow.
+	m("아들도 거기서 공부할거야?"); // Will I see you studying there?
+	n("아, 전 잭네 집 가서 공부하려고요."); // Actually, I'm gonna study at Jack's place.
+	m("또?"); // Again?
+	m("너 그 애랑 많이 놀더라."); //그 애랑 되게 잘 놀더라. You spend a lot of time with him.
 
 	Choose({
 		"그냥 공부만 같이 해요.": function(message){
 			$.relationship = "study";
 			Buddy_1(message);
 		},
-		"엄마, 잭은... 그냥 친구가 아니에요. Mom, Jack is... more than a friend.": function(message){
+		"엄마, 잭은... 친구 이상이에요.": function(message){ // Mom, Jack is... more than a friend.
 			
 			$.relationship = "best friend";
 			n(message);
@@ -102,14 +102,14 @@ function Start_Dinner_2_2(message){
 			$.lying_about_hanging_out = true;
 			m("아, 단짝 친구처럼?");
 			n("엄. 그게--");
-			m("공부는 안 하고 놀기만 한다는거구나. So you're just hanging out, not studying.");
+			m("공부는 안 하고 놀기만 한다는거구나."); // So you're just hanging out, not studying.
 			n("우리 공부 해요!");
 			m(". . .");
-			m("알겠다. 나한테 거짓말만 하지 마. Alright, just don't lie to me.");
+			m("알겠어. 나한테 거짓말만 하지 마."); // Alright, just don't lie to me.
 			n("거짓말 안 해요.");
 			Buddy_1_point_5();
 		},
-		"당연하죠. 그게 친한 친구들이 하는건데요. Well yeah, that's what good pals do.": function(message){
+		"당연하죠. 그게 친한 친구들이 하는건데요.": function(message){ // Well yeah, that's what good pals do.
 			$.relationship = "friend";
 			Buddy_1(message);
 		}
@@ -128,14 +128,14 @@ function Buddy_1(message){
 
 	if($.relationship!="study"){
 		$.lying_about_hanging_out = true;
-		m("공부는 안 하고 놀기만 한다는거구나. So you're just hanging out, not studying.");
+		m("공부는 안 하고 놀기만 한다는거구나."); // So you're just hanging out, not studying.
 		n("우리 공부 해요!");
 		m(". . .");
-		m("알겠다. 엄마한테 거짓말만 하지 마. Alright, just don't lie to me.");
+		m("알겠다. 엄마한테 거짓말만 하지 마."); //Alright, just don't lie to me
 		n("거짓말 안 해요.");
 	}else{
-		m("알겠어. 엄만 확인하는 것뿐이야. Okay. I'm just making sure.");
-		n("뭘... 확인해요? Of... what?");
+		m("알겠어. 엄만 확인하는 것뿐이야."); // Okay. I'm just making sure.
+		n("뭘... 확인해요?"); // Of... what?
 	}
 
 	Buddy_1_point_5();
@@ -145,10 +145,10 @@ function Buddy_Caught_Lying_1(message,callback){
 	n(message);
 	m("잠깐...");
 	m("네가 '공부만 한다고' 했잖아. I thought you said you 'just study together'.");
-	m("네희 둘이 친구라고 하진 않았는데. You didn't tell me you were friends.");
+	m("너희 둘이 친구라고 하진 않았는데. You didn't tell me you were friends.");
 	$.lying_about_relationship = true;
 	Choose({
-		"Oops, I meant he's just a studymate.": callback,
+		"앗, 그냥 공부 메이트라는 뜻이었어요. Oops, I meant he's just a studymate.": callback,
 		"글쎼, 공부도 같이 하고 친구도 할 수 있죠... Well, he can also be my friend...": callback, // tl awk
 		"아뇨, 계속 친구라고 말했는데요. No, I always said we were friends.": callback
 	});
@@ -175,25 +175,25 @@ function Buddy_1_point_5(){
 
 function Buddy_2(message){
 	n(message);
-	m("알겠어."); // okay
+	m("알았어."); // okay
 	if($.lying_about_relationship){
 		m("엄마한테 거짓말만 하지 마. Just don't lie to me.");
 		n("안 할게요. I won't.");
 		m(". . .");
-		m("But... about you hanging out with Jack.");
+		m("그런데... 네가 잭이랑 노는 것에 관해서 말이야."); //But... about you hanging out with Jack
 	}
-	m("It's just that some people might assume things, since...");
-	m("You know... he looks like...");
-	m("A gay?");
+	m("그냥 어떤 사람들이 오해할 수도 있으니까. 왜냐면..."); //It's just that some people might assume things, since...
+	m("그... 걔가 그것처럼 생겼잖아..."); // You know... he looks like...
+	m("게이?"); // A gay?
 	Buddy_Choice();
 }
 
 function Buddy_3(message){
 	n(message);
-	m("Just between mother and son, I think he might be... you know...");
-	n("No, what?");
-	m("A gay!");
-	m("He looks and talks like a gay.");
+	m("엄마와 아들 사이에서, 잭이 그거일... 수도 있다고 생각해...Just between mother and son, I think he might be... you know..."); // tl awk
+	n("아니, 뭔데요?"); // No, what?
+	m("게이!"); // A gay!
+	m("게이처럼 생겼고 게이처럼 말하잖아."); // He looks and talks like a gay.
 	Buddy_Choice();
 }
 
@@ -247,11 +247,11 @@ function Buddy_4(message){
 
 function Buddy_Choice(){
 	if($.relationship=="friend"){
-		m("And since you say he's a 'good pal'...");
-		m("People might think you're a gay like him, too.");
+		m("그리고 네가 잭이 '좋은 친구'라고 하니... And since you say he's a 'good pal'...");
+		m("사람들이 너도 걔처럼 게이라고 생각할 수 있잖아. People might think you're a gay like him, too.");
 	}
 	if($.relationship=="best friend"){
-		m("And since you say he's your BEST friend...");
+		m("그리고 네가 잭이 네 **단짝** 친구라고 하니... And since you say he's your BEST friend...");
 		m("People might think you're a gay like him, too.");
 	}
 	Choose({
