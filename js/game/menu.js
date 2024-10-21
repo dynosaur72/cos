@@ -205,40 +205,40 @@ function Credits(message){
 	}
 	
 	N("아, 실례했네! 날 소개할게. Ah, how rude of me! Let me introduce myself.");
-	N("안녕. 난 니키 케이스야. Hi, I'm Nicky Case.");
-	N("서류상의 이름은 아니고, 내 진짜 이름일 뿐이야. That's not my legal name, it's just my REAL name.");
+	N("안녕, 난 니키 케이스야.");
+	N("서류상의 이름은 아니지만, 내 <b>진짜</b> 이름이야.");
 
-	p("그거 완전 이상한데. That's totes weird, dude.");
+	p("그거 완전 이상한데.");
 	if($.asked_about){
 		p("And like you just told me, this is your personal story?");
 	}else{
-		p("그리고 네가 이 게임을 만들었다고? And you made this game?");
+		p("그리고 네가 이 게임을 만들었다고?");
 	}
 
-	N("응, 내가 커밍아웃 시뮬레이터의 유일한 작가/프로그래머/일러스트레이터야. Yep, I am the sole writer / programmer / artist of Coming Out Simulator.");
+	N("응, 내가 커밍아웃 시뮬레이터의 유일한 글쓴이/프로그래머/일러스트레이터야.");
 
 	if($.asked_about){
-		p("이 모든 걸 네가 다? All of this yourself?");
-		p("아까도 말했고 다시 말할게... I said it before and I'll say it again...");
-		p("그러시겠지. 이 나르시시스트. Of course. You narcissist.");
-		N("뭐 **다** 나는 아니야. Well it's not ALL me.");
-		N("음향효과는 여러 퍼블릭 도메인 소스에서 썼어. The sounds & audio are from various public domain sources."); // tl awk. "음향효과나 배경음악" 배경음악 없는데?
+		p("이 모든 걸 네가 다?");
+		p("아까도 말했지만 다시 말할게...");
+		p("그러시겠지. 이 나르시시스트.");
+		N("뭐 **다** 내가 한 건 아니야.");
+		N("음향 효과는 여러 가지 퍼블릭 도메인 소스를 썼어."); // tl awk. "음향효과나 배경음악" 배경음악 없는데?
 	}else{
-		N("음향효과는 여러 퍼블릭 도메인 소스에서 썼지만. The sounds & audio, though, are from various public domain sources."); // not same as above due to prev dialogue
+		N("음향 효과는 여러 가지 퍼블릭 도메인 소스를 썼지만."); // not same as above due to prev dialogue. "~지만" 만 다름
 	}
 
-	N("그렇지만, 이 게임 뒤에는 나밖에 없지만... But although it's mostly just me behind this game..."); // "주로" tl awk?!
-	N("...이 게임의 이야기 뒤에는 많은 사람들이 있어. ...there's a lot of people behind this game's story.");
+	N("이 게임의 배후에는 나밖에 없지만..."); // "주로" tl awk?!
+	N("...이 게임의 이야기 뒤에는 많은 사람들이 있어.");
 
 	if($.asked_about){
 		Choose({
-			"말 나온 김에, 이제 그 게임 플레이 좀 하자! Speaking of which, let's play that! Now!": Play
+			"말 나온 김에, 이제 그 게임 플레이 좀 하자!": Play
 		});
 	}else{
 		Choose({
-			"말 나온 김에, 이제 그 게임 좀 플레이해봐도 될까? Speaking of that, can we play it now?": Play,
-			"이걸 왜 만들었어? Why'd you make this? (이 게임에 대해)": function(){
-				About("이걸 왜 만들었어?");
+			"말 나온 김에, 이제 그 게임 좀 플레이해봐도 될까?": Play,
+			"이걸 만든 이유는 뭐야? (이 게임에 대해)": function(){
+				About("이걸 만든 이유는 뭐야?");
 			}
 		});
 	}
@@ -265,7 +265,7 @@ function About(message){
 	if($.asked_credits){
 		p("아니, 나르시시스트는 자기 진짜 이름을 쓰겠지.");
 		N("내 진짜 이름 맞다고 말했--");
-		p("알겠어, 알겠어. Weirdo."); // weirdo needs tl
+		p("알겠어, 알겠어. Weirdo."); // weirdo needs tl. 이상한 놈?
 	}
 
 	N("이 게임은 #Nar8 Game Jam에 내려고 만들었어. 만들 핑계가 생겼지. 마감기한도!");
@@ -280,7 +280,7 @@ function About(message){
 
 	if($.asked_credits){
 		Choose({
-			"이제 이 게임 좀 플레이하자. Let's just play this game already.": Play
+			"이제 이 게임 좀 플레이하자.": Play
 		});
 	}else{
 		Choose({
