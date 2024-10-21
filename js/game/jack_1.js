@@ -19,7 +19,7 @@ function Start_Jack_1(){
 	/////////////////////////////
 
 	j("그리고 나서 걔가 그냥,");
-	j("\"내가 이 항공사를 사들였거든.\"");
+	j("'내가 이 항공사를 사들였거든.'");
 	j("이라고 말하는 장면, 완전 쩔었어!");
 	n("걔가 한 말이 그거였어?");
 	n("영화관에서 다 웃고 있었는데 나만 못 들었어.");
@@ -29,7 +29,7 @@ function Start_Jack_1(){
 	Choose({
 		"그거 완전 다 꿈이었잖아.": Inception_Dream,
 		"다시 현실로 돌아온 게 틀림없어!": Inception_Awake,
-		"상관없어. Cobbs just finally let go.": Inception_Neither // 콥스가 결국(드디어) 모든걸 놓았잖아.
+		"상관없어. 콥[스?]가 드디어 모든 걸 내려놓았잖아. Cobbs just finally let go.": Inception_Neither // 콥스가 결국(드디어) 모든걸 놓았잖아. // 콥스가 아니라 콥인데 이건 의도적인건가? 
 	});
 
 }
@@ -39,7 +39,7 @@ function Inception_Dream(message){
 	$.inception_answer = "dream";
 
 	n(message);
-	j("So his entire redemption story was a lie?");
+	j("그러니까 So his entire redemption story was a lie?"); // redemption 번역 못 찾겠음
 	n("A big fat lie.");
 	j("You're a bit of a downer, aren't you?");
 
@@ -74,24 +74,24 @@ function Inception_Awake(message){
 	$.im_a_poet = true;
 
 	n(message);
-	n("Otherwise, the whole movie would've all just been a lie.");
-	n("What's the point of living a lie?");
-	j("Ah Nicky, you amateur poet.");
-	j("I take it you liked the film?");
+	n("그게 아니면 영화는 전부 거짓[말]일 수밖에 없잖아."); // 아래의 "거짓말"이랑 맞추려고. 둘 다 "lie"임
+	n("뭐 하러 거짓말 속에서 살아가는데?");
+	j("아 니키, 이 아마추어 시인. Ah Nicky, you amateur poet."); // 이 아마추언 시인같은... 시인...엄...
+	j("그래서 영화는 좋았나 보지? I take it you liked the film?");
 
 	Choose({
-		"Aw yiss. Yes I did.": function(message){
+		"응, 완전 좋았어. Aw yiss. Yes I did.": function(message){
 			n(message);
 			Thanks();
 		},
-		"Mehhh, it was a tad confusing at times.": function(message){
+		"으으음. 가끔은 좀 헷갈리던데. Mehhh, it was a tad confusing at times.": function(message){
 			n(message);
 			j("I believe that was the purpose.");
 			n("Mission accomplished, then.");
 			n("어쩄든...");
 			Thanks();
 		},
-		"BWOOOOOOOOOOONG": function(message){
+		"**브와아아아아아앙**BWOOOOOOOOOOONG": function(message){ // how is this supposed to be pronounced? ask LOL
 			n(message);
 			j("I'll interpret that as a yes.");
 			Thanks();
