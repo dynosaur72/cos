@@ -49,7 +49,7 @@ function Inception_Dream(message){
 			$.im_a_poet = true;
 
 			n(message);
-			j("오 니키, 이 아마추어 시인. Ah Nicky, you amateur poet."); // 이 아마추어 시인같으니라구.
+			j("오 니키, 이 아마추어 시인 같으니라고. Ah Nicky, you amateur poet."); // 이 아마추어 시인같으니라구.
 			n("나 프랑스 빵이랑 와인 좀 갖다줘. Get me some french breads and wine,");
 			n("내가 해본 말 중에 제일 오글거리는 말이었던 것 같으니까. Coz that's got to be the cheesiest thing I've ever said."); // 그건 틀림없이 내가 ~ 말이었던 것 같으니까.
 			j("사과할 필요 없어. Apologize for nothing.");
@@ -76,7 +76,7 @@ function Inception_Awake(message){
 	n(message);
 	n("그게 아니면 영화는 전부 거짓[말]일 수밖에 없잖아."); // 아래의 "거짓말"이랑 맞추려고. 둘 다 "lie"임
 	n("뭐 하러 거짓말 속에서 살아가는데?");
-	j("오 니키, 이 아마추어 시인. Ah Nicky, you amateur poet."); // 이 아마추언 시인같으니라고.
+	j("오 니키, 이 아마추어 시인 같으니라고. Ah Nicky, you amateur poet."); // 이 아마추언 시인같으니라고.
 	j("그래서 영화는 좋았나 보지?");
 
 	Choose({
@@ -87,13 +87,13 @@ function Inception_Awake(message){
 		"으으음. 가끔은 좀 헷갈리던데. Mehhh, it was a tad confusing at times.": function(message){
 			n(message);
 			j("그게 [목적]일걸. I believe that was the purpose.");
-			n("그럼 성공했네. Mission accomplished, then.");
+			n("그럼 성공했네. Mission accomplished, then."); // 목적 달성했네.
 			n("어쩄든...");
 			Thanks();
 		},
 		"**브와아아아아아앙**BWOOOOOOOOOOONG": function(message){ // how is this supposed to be pronounced? ask LOL
 			n(message);
-			j("'응'이라고 받아들일게. I'll interpret that as a yes.");
+			j("좋았다는 걸로 받아들일게. I'll interpret that as a yes.");
 			Thanks();
 		}
 	});
@@ -162,7 +162,7 @@ function Thanks(){
 	n("내일 저녁에 다시 만나자!");
 
 	j("근데 솔직히...");
-	n("부모님이 하룻밤 외출하는걸 허락해주신다면 좋겠는데."); // Hope I can convince the parents to let me out overnight
+	n("부모님께 하룻밤 외출하는거 허락받으면 좋겠는데. /부모님이 하룻밤 외출하는걸 허락해주신다면 좋겠는데."); // Hope I can convince the parents to let me out overnight
 
 	j("너네 부모님한테 공부하고 있었다고 뻥쳐놓고 영화관 가는 거, 안 그랬으면 좋겠는데.");
 	n("그냥 밤새 중간고사 벼락치기 하는 척 하면-- ?");
@@ -197,7 +197,7 @@ function Hiding(){
 	j("니키, 이렇게 숨기는게 널 괴롭히고 있잖아.");
 
 	if($.inception_answer=="awake"){
-		j("네가 말했던 것처럼, 뭐하러 거짓말 속에서 살아가는데? Like you said, what's the point of living a lie?"); //LINE 78
+		j("네가 말했던 것처럼, 뭐하러 거짓말 속에서 살아가는데?"); //LINE 78
 	}
 	if($.inception_answer=="dream"){
 		j("네가 뭐랬지... 'a big fat lie?' (not t/l'd yet) It's... how'd you put it... 'a big fat lie'?"); //LINE 43
@@ -304,7 +304,7 @@ function Hiding_3(message){
 	}else if(!$.hippies && $.im_a_poet){
 		n("이 아마추어 시인아.");
 	}else{
-		n("You goof.");
+		n("이 바보야. You goof.");
 	}
 
 	Jack_1_End();
