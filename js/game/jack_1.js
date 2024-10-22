@@ -39,13 +39,13 @@ function Inception_Dream(message){
 	$.inception_answer = "dream";
 
 	n(message);
-	j("그러니까 So his entire redemption story was a lie?"); // redemption 번역 못 찾겠음
-	n("A big fat lie.");
-	j("You're a bit of a downer, aren't you?");
+	j("그러니까 So his entire redemption story was a lie?"); // redemption 번역 못 찾겠음 // "그래서, 그의 구원 스토리는 전부 거짓이었다?"
+	n("완전 거짓말. A big fat lie."); // 큰 거짓말, 거대한 거짓말
+	j("넌 좀 우울한 애구나? You're a bit of a downer, aren't you?");
 
 	Choose({
 		"그래, 나는 슬픔밖에 없는 슬픔 덩어리다.": Sadsack,
-		"Sometimes... but not when I'm with you.": function(message){
+		"가끔은... 너랑 있을 땐 아니지만. Sometimes... but not when I'm with you.": function(message){
 			$.im_a_poet = true;
 
 			n(message);
