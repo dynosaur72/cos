@@ -41,7 +41,7 @@ function Inception_Dream(message){
 	n(message);
 	j("그러니까 So his entire redemption story was a lie?"); // redemption 번역 못 찾겠음 // "그래서, 그의 구원 스토리는 전부 거짓이었다?"
 	n("완전 거짓말. A big fat lie."); // 큰 거짓말, 거대한 거짓말
-	j("넌 좀 우울한 애구나? You're a bit of a downer, aren't you?");
+	j("너 좀 우울한 애구나? You're a bit of a downer, aren't you?");
 
 	Choose({
 		"그래, 나는 슬픔밖에 없는 슬픔 덩어리다.": Sadsack,
@@ -49,11 +49,11 @@ function Inception_Dream(message){
 			$.im_a_poet = true;
 
 			n(message);
-			j("아 니키, 이 아마추어 시인. Ah Nicky, you amateur poet."); // 이 아마추어 시인같으니라구.
+			j("오 니키, 이 아마추어 시인. Ah Nicky, you amateur poet."); // 이 아마추어 시인같으니라구.
 			n("나 프랑스 빵이랑 와인 좀 갖다줘. Get me some french breads and wine,");
 			n("내가 말해본 것 중에 제일 오글거리는 말이었던 것 같으니까. Coz that's got to be the cheesiest thing I've ever said."); // 그건 틀림없이 내가 ~ 말이었던 것 같으니까.
-			j("Apologize for nothing.");
-			n("Anywho...");
+			j("사과할 필요 없어. Apologize for nothing.");
+			n("어쨌든...");
 			Thanks();
 		},
 		"난 현실주의자일 뿐이야.": function(message){
@@ -61,7 +61,7 @@ function Inception_Dream(message){
 
 			n(message);
 			j("넌 긍정적인 사고가 좀 필요해.");
-			n("And YOU need to stop being such a new-age hippie.");
+			n("그리고 **너는** 뉴에이지 히피[ 좀 그만둬야 돼.] And YOU need to stop being such a new-age hippie.");
 			n("어쨌든...");
 			Thanks();
 		}
@@ -76,8 +76,8 @@ function Inception_Awake(message){
 	n(message);
 	n("그게 아니면 영화는 전부 거짓[말]일 수밖에 없잖아."); // 아래의 "거짓말"이랑 맞추려고. 둘 다 "lie"임
 	n("뭐 하러 거짓말 속에서 살아가는데?");
-	j("아 니키, 이 아마추어 시인. Ah Nicky, you amateur poet."); // 이 아마추언 시인같은... 시인...엄...
-	j("그래서 영화는 좋았나 보지? I take it you liked the film?");
+	j("오 니키, 이 아마추어 시인. Ah Nicky, you amateur poet."); // 이 아마추언 시인같으니라고.
+	j("그래서 영화는 좋았나 보지?");
 
 	Choose({
 		"응, 완전 좋았어. Aw yiss. Yes I did.": function(message){
@@ -86,14 +86,14 @@ function Inception_Awake(message){
 		},
 		"으으음. 가끔은 좀 헷갈리던데. Mehhh, it was a tad confusing at times.": function(message){
 			n(message);
-			j("I believe that was the purpose.");
-			n("Mission accomplished, then.");
+			j("그게 [목적]일걸. I believe that was the purpose.");
+			n("그럼 성공했네. Mission accomplished, then.");
 			n("어쩄든...");
 			Thanks();
 		},
 		"**브와아아아아아앙**BWOOOOOOOOOOONG": function(message){ // how is this supposed to be pronounced? ask LOL
 			n(message);
-			j("I'll interpret that as a yes.");
+			j("'응'이라고 받아들일게. I'll interpret that as a yes.");
 			Thanks();
 		}
 	});
@@ -115,10 +115,10 @@ function Inception_Neither(message){
 
 			$.im_a_poet = true;
 
-			n("I'm a poet,");
-			n("and I wasn't even aware of the fact.");
-			j("You're a lyrical miracle, the evidence is empircal.");
-			n("That's hysterical.");
+			n("난 시인인데, I'm a poet,");
+			n("그런 줄도 몰랐네. and I wasn't even aware of the fact.");
+			j("넌 [서정적] 기적이고 증거는 경험적이야. You're a lyrical miracle, the evidence is empirical."); // the rhyme...
+			n("완전 [ㅁㅁ]적이네. That's hysterical.");
 			n("Anywho...");
 			Thanks();
 
