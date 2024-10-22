@@ -49,9 +49,9 @@ function Inception_Dream(message){
 			$.im_a_poet = true;
 
 			n(message);
-			j("Ah Nicky, you amateur poet.");
-			n("Get me some french breads and wine,");
-			n("Coz that's got to be the cheesiest thing I've ever said.");
+			j("아 니키, 이 아마추어 시인. Ah Nicky, you amateur poet."); // 이 아마추어 시인같으니라구.
+			n("나 프랑스 빵이랑 와인 좀 갖다줘. Get me some french breads and wine,");
+			n("내가 말해본 것 중에 제일 오글거리는 말이었던 것 같으니까. Coz that's got to be the cheesiest thing I've ever said."); // 그건 틀림없이 내가 ~ 말이었던 것 같으니까.
 			j("Apologize for nothing.");
 			n("Anywho...");
 			Thanks();
