@@ -51,7 +51,7 @@ function Inception_Dream(message){
 			n(message);
 			j("오 니키, 이 아마추어 시인. Ah Nicky, you amateur poet."); // 이 아마추어 시인같으니라구.
 			n("나 프랑스 빵이랑 와인 좀 갖다줘. Get me some french breads and wine,");
-			n("내가 말해본 것 중에 제일 오글거리는 말이었던 것 같으니까. Coz that's got to be the cheesiest thing I've ever said."); // 그건 틀림없이 내가 ~ 말이었던 것 같으니까.
+			n("내가 해본 말 중에 제일 오글거리는 말이었던 것 같으니까. Coz that's got to be the cheesiest thing I've ever said."); // 그건 틀림없이 내가 ~ 말이었던 것 같으니까.
 			j("사과할 필요 없어. Apologize for nothing.");
 			n("어쨌든...");
 			Thanks();
