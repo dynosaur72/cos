@@ -174,7 +174,7 @@ function Thanks(){
 		"절대, 절대 못 말해.": function(message){ // they can never, ever know.
 			$.coming_out_readiness="no";
 			n(message);
-			j("Really, never?");
+			j("진짜, 절대로? Really, never?");
 			Hiding();
 		},
 		"나도 말할 수 있었으면 좋겠어.": function(message){
@@ -197,10 +197,10 @@ function Hiding(){
 	j("니키, 이렇게 숨기는게 널 괴롭히고 있잖아.");
 
 	if($.inception_answer=="awake"){
-		j("Like you said, what's the point of living a lie?"); //LINE 78
+		j("네가 말했던 것처럼, 뭐하러 거짓말 속에서 살아가는데? Like you said, what's the point of living a lie?"); //LINE 78
 	}
 	if($.inception_answer=="dream"){
-		j("It's... how'd you put it... 'a big fat lie'?"); //LINE 43
+		j("네가 뭐랬지... 'a big fat lie?' (not t/l'd yet) It's... how'd you put it... 'a big fat lie'?"); //LINE 43
 	}
 
 	if($.sadsack){
@@ -225,7 +225,7 @@ function Hiding(){
 	j("너네 부모님도 네 편일지 어떻게 알아?");
 
 	Choose({
-		"동양인 부모님들은 보통 엄청 호모포빅하거든.": Hiding_2,
+		"동양인 부모님들은 보통 엄청 호모포비아거든.": Hiding_2, // homophobic = 호모포빅 or 호모포비아?
 		"모르겠어... 안 해봐서 모르는 걸지도 모르지.": Hiding_2,
 		"우리 부모님은 공부 말곤 관심도 없으시거든.": Hiding_2
 	});
@@ -275,9 +275,9 @@ function Hiding_3(message){
 	
 	n(message);
 	j(". . .");
-	n("너무 놀래키면 안되니까.");
+	n("너무 놀래키면 안되니까."); // 너무 놀라시게 하면 안 되니까.
 	n("내일 밤 너네 집에서 자는것도 아직 허락 못 받았고.");
-	n("너랑 또 공부하러 간다고 말해놓을게.");
+	n("너랑 또 공부하러 간다고 말해놓을게."); // 말씀드려놓을게
 	j(". . .");
 	n("저녁시간이다. 나 내려가볼게.");
 
@@ -285,8 +285,8 @@ function Hiding_3(message){
 	n("응?");
 	j("영화 엔딩에 대한 네 해석.");
 	switch($.inception_answer){
-		case "dream": j("I think Cobbs was still dreaming, living a lie."); break;
-		case "awake": j("I think Cobbs reconnected with his real family, in the real world."); break;
+		case "dream": j("콥스가 아직도 꿈속에 있었다고 생각해, 거짓말 속에서 [살면서]. I think Cobbs was still dreaming, living a lie."); break;
+		case "awake": j("콥스가 현실 세계에서 진짜 가족이랑 [unf] I think Cobbs reconnected with his real family, in the real world."); break;
 		case "neither": j("결국 콥스가 행복한 이상 상관없는거야."); break;
 	}
 	n("아.");
