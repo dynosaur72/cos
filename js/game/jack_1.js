@@ -29,7 +29,7 @@ function Start_Jack_1(){
 	Choose({
 		"그거 완전 다 꿈이었잖아.": Inception_Dream,
 		"다시 현실로 돌아온 게 틀림없어!": Inception_Awake,
-		"상관없어. 콥[스?]가 드디어 모든 걸 내려놓았잖아. Cobbs just finally let go.": Inception_Neither // 콥스가 결국(드디어) 모든걸 놓았잖아. // 콥스가 아니라 콥인데 이건 의도적인건가? 
+		"상관없어. 콥스가 드디어 모든 걸 내려놓았잖아. Cobbs just finally let go.": Inception_Neither // 콥스가 결국(드디어) 모든걸 놓았잖아. // 콥스가 아니라 콥인데 이건 의도적인건가? 
 	});
 
 }
@@ -41,7 +41,7 @@ function Inception_Dream(message){
 	n(message);
 	j("그러니까 So his entire redemption story was a lie?"); // redemption 번역 못 찾겠음 // "그래서, 그의 구원 스토리는 전부 거짓이었다?"
 	n("완전 거짓말. A big fat lie."); // 큰 거짓말, 거대한 거짓말
-	j("너 좀 우울한 애구나? You're a bit of a downer, aren't you?");
+	j("너 좀 우울한 애구나?");
 
 	Choose({
 		"그래, 나는 슬픔밖에 없는 슬픔 덩어리다.": Sadsack,
@@ -84,16 +84,16 @@ function Inception_Awake(message){
 			n(message);
 			Thanks();
 		},
-		"으으음. 가끔은 좀 헷갈리던데. Mehhh, it was a tad confusing at times.": function(message){
+		"으으음. 가끔은 좀 헷갈리던데.": function(message){
 			n(message);
 			j("그게 [목적]일걸. I believe that was the purpose.");
 			n("그럼 성공했네. Mission accomplished, then."); // 목적 달성했네.
 			n("어쩄든...");
 			Thanks();
 		},
-		"**브와아아아아아앙**BWOOOOOOOOOOONG": function(message){ // how is this supposed to be pronounced? ask LOL
+		"**브와아아아아아앙** BWOOOOOOOOOOONG": function(message){ // how is this supposed to be pronounced? ask LOL
 			n(message);
-			j("좋았다는 걸로 받아들일게. I'll interpret that as a yes.");
+			j("좋았다는 걸로 받아들일게.");
 			Thanks();
 		}
 	});
@@ -119,7 +119,7 @@ function Inception_Neither(message){
 			n("그런 줄도 몰랐네. and I wasn't even aware of the fact.");
 			j("넌 [서정적] 기적이고 증거는 경험적이야. You're a lyrical miracle, the evidence is empirical."); // the rhyme...
 			n("완전 [ㅁㅁ]적이네. That's hysterical.");
-			n("Anywho...");
+			n("어쨌든... Anywho...");
 			Thanks();
 
 		},
@@ -146,16 +146,16 @@ function Sadsack(message){
 	$.sadsack = true;
 
 	n(message);
-	j("Aw, sorry to hear that.");
-	j("I hope our little date at the movies cheered you up?");
-	n("Sure did!");
+	j("Aw, sorry to hear that."); // 유감스럽다고 해도 되는데 너무 formal함
+	j("우리 영화관 데이트 덕분에 기분 좀 나아졌길 바라? [idk its weird] I hope our little date at the movies cheered you up?");
+	n("완전! Sure did!");
 	Thanks();
 
 }
 
 function Thanks(){
 	
-	n("<인셉션> 보여줘서 고마워!"); // so yeah! 는 겹쳐서 제거
+	n("그러니까 <인셉션> 보여줘서 고마워!"); // so yeah!를 어쨌든이라고 하면 겹쳐서 그러니까로 바꿈.
 	j("별말씀을.");
 	j("그 네가 만드는 웹게임에서 <인셉션> 패러디해보는건 어때?");
 	n("으음, 그래볼까.");
@@ -164,8 +164,8 @@ function Thanks(){
 	j("근데 솔직히...");
 	n("부모님께 하룻밤 외출하는거 허락받으면 좋겠는데. /부모님이 하룻밤 외출하는걸 허락해주신다면 좋겠는데."); // Hope I can convince the parents to let me out overnight
 
-	j("너네 부모님한테 공부하고 있었다고 뻥쳐놓고 영화관 가는 거, 안 그랬으면 좋겠는데.");
-	n("그냥 밤새 중간고사 벼락치기 하는 척 하면-- ?");
+	j("너네 부모님한테 영화관 갔는데 공부하고 있었다고 뻥치는 거, 안 그랬으면 좋겠는데.");
+	n("그냥 밤새 중간고사 벼락치기 하는 척 하면-- 응?");
 
 	j("계속 이렇게 숨길 순 없잖아.");
 	n("잭...");
@@ -218,7 +218,7 @@ function Hiding(){
 		n("ㅋㅋㅋ"); // Heh.
 		j("요점은, 우리 부모님은 내가 커밍아웃했을 때도 내 편이었단 말이야.");
 	}else{
-		j("그리고 부모님은 내 편이었어!");
+		j("그리고 엄청 내 편을 들어줬다고!"); // and they were very supportive!
 	}
 
 	j("여긴 캐나다야. 다들 LGBT에 대해 우호적이라고."); // lots of ppl are lgbt friendly
@@ -275,7 +275,7 @@ function Hiding_3(message){
 	
 	n(message);
 	j(". . .");
-	n("너무 놀래키면 안되니까."); // 너무 놀라시게 하면 안 되니까.
+	n("너무 겁주면 안되니까."); // 너무 놀라시게 하면/놀래키면 안 되니까.
 	n("내일 밤 너네 집에서 자는것도 아직 허락 못 받았고.");
 	n("너랑 또 공부하러 간다고 말해놓을게."); // 말씀드려놓을게
 	j(". . .");
@@ -285,8 +285,8 @@ function Hiding_3(message){
 	n("응?");
 	j("영화 엔딩에 대한 네 해석.");
 	switch($.inception_answer){
-		case "dream": j("콥스가 아직도 꿈속에 있었다고 생각해, 거짓말 속에서 [살면서]. I think Cobbs was still dreaming, living a lie."); break;
-		case "awake": j("콥스가 현실 세계에서 진짜 가족이랑 [unf] I think Cobbs reconnected with his real family, in the real world."); break;
+		case "dream": j("콥스가 아직도 꿈속에 있었던 것 같아. 거짓말 속에서."); break;
+		case "awake": j("콥스가 현실 세계에서 진짜 가족들이랑 다시 만난 것 같아."); break;
 		case "neither": j("결국 콥스가 행복한 이상 상관없는거야."); break;
 	}
 	n("아.");
