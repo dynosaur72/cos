@@ -101,15 +101,15 @@ function Start_Dinner_2_2(message){
 			
 			$.lying_about_hanging_out = true;
 			m("아, 절친같은 거니?");
-			n("엄. 그게--");
-			m("공부는 안 하고 놀기만 한다는거구나."); // So you're just hanging out, not studying.
-			n("우리 공부 해요!");
+			n("음. 뭐랄까--");
+			m("그래서 공부는 안 하고 놀기만 한다는거구나."); // So you're just hanging out, not studying.
+			n("우리 공부하고 있어요!");
 			m(". . .");
 			m("그래. 거짓말만 하지 마렴."); // Alright, just don't lie to me.
 			n("거짓말 안 해요.");
 			Buddy_1_point_5();
 		},
-		"당연하죠. 원래 친한 친구끼리 그러는건데요.": function(message){ // Well yeah, that's what good pals do.
+		"네, 뭐, 원래 좋은 친구들끼리 하는 게 그거니까.": function(message){ // Well yeah, that's what good pals do.
 			$.relationship = "friend";
 			Buddy_1(message);
 		}
@@ -198,10 +198,10 @@ function Buddy_3(message){
 }
 
 function Buddy_4(message){
-	n(message); // "The wrong idea might be the right idea."
-	m("아, 그거 스님들 선명상 같은 거에서 하는 말이지? Oh, that's like a zen thing, right?"); //
+	n(message); // "The wrong idea might be the right idea." // NONE of my playthroughs have this part
+	m("아, 그거 스님들 선명상 같은 거에서 나온 말이지? Oh, that's like a zen thing, right?"); //
 	n("엄.");
-	m("선명상은 자연과도 관련 있는데, 네 친구/'동급생 잭은... Zen is also about nature, and your classmate Jack, he...");
+	m("선명상은 자연이랑도 관련있는데, 네 친구/동급생/학우 잭은... Zen is also about nature, and your classmate Jack, he...");
 	m("...그러니까, 자연스러워 보이지 않는데?"); // ...you know, doesn't seem natural?
 	Choose({
 		"잭이 게이라고 생각하는거죠.": function(message){ //You think he's gay.
