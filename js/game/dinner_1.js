@@ -34,15 +34,15 @@ function Waiting_1(message){
 	n(". . .");
 
 	Choose({
-		"[밥 먹기 시작하기]": function(message){
+		"[밥 먹기 시작한다.]": function(message){
 			$.waiting_action = "eat";
 			Waiting_2(message);
 		},
-		"[좀 더 기다리기]": function(message){
+		"[좀 더 기다린다.]": function(message){
 			$.waiting_action = "wait";
 			Waiting_2(message);
 		},
-		"[음식 갖고 장난치기]": function(message){
+		"[음식 갖고 장난친다.]": function(message){
 			$.waiting_action = "play";
 			Waiting_2(message);
 		}
