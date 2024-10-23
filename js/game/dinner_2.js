@@ -33,7 +33,7 @@ function Start_Dinner_2(){
 			m("내일 계획은 어떻게 되니?");
 			Start_Dinner_2_1();
 		},
-		"저 엄마아빠한테 할 이야기가 있어요.": function(message){
+		"저 엄마아빠한테 할 얘기가 있어요.": function(message){
 			n(message);
 			m("알았어. 나중에 아버지가 들어오시면 엄마아빠한테 말해주렴.");
 			n("아. 알겠어요.");
@@ -69,7 +69,7 @@ function Start_Dinner_2_1(){
 			$.studying_subject = "미적분";
 			Start_Dinner_2_2(message);
 		},
-		"컴퓨터과학이요.": function(message){ // 정보? 프로그래밍?
+		"컴퓨터과학이요.": function(message){ // compsci
 			$.studying_subject = "컴퓨터과학";
 			Start_Dinner_2_2(message);
 		}
@@ -109,7 +109,7 @@ function Start_Dinner_2_2(message){
 			n("거짓말 안 해요.");
 			Buddy_1_point_5();
 		},
-		"당연하죠. 그게 원래 친한 친구끼리 하는건데요.": function(message){ // Well yeah, that's what good pals do.
+		"당연하죠. 원래 친한 친구끼리 그러는건데요.": function(message){ // Well yeah, that's what good pals do.
 			$.relationship = "friend";
 			Buddy_1(message);
 		}
@@ -144,11 +144,11 @@ function Buddy_1(message){
 function Buddy_Caught_Lying_1(message,callback){
 	n(message);
 	m("잠깐...");
-	m("네가 '공부만 같이 한다고' 했잖아. I thought you said you 'just study together'.");
-	m("너희 둘이 친구라고 하진 않았는데. You didn't tell me you were friends.");
+	m("네가 '공부만 같이 한다'고 했잖아."); // I thought you said you 'just study together'
+	m("너희 둘이 친구라고 하진 않았는데."); // You didn't tell me you were friends.
 	$.lying_about_relationship = true;
 	Choose({
-		"앗, 그냥 공부 메이트라는 뜻이었어요. Oops, I meant he's just a studymate.": callback, // tl awk
+		"앗, 그냥 공부 메이트라는 뜻이었어요.": callback, // tl awk //  Oops, I meant he's just a studymate.
 		"글쎼, 공부도 같이 하고 친구도 할 수 있죠... Well, he can also be my friend...": callback, // tl awk
 		"아뇨, 계속 친구라고 말했는데요. No, I always said we were friends.": callback
 	});
