@@ -45,14 +45,14 @@ function Inception_Dream(message){
 
 	Choose({
 		"그래, 나는 슬픔밖에 없는 슬픔 덩어리다.": Sadsack,
-		"가끔은... 너랑 있을 땐 아니지만. Sometimes... but not when I'm with you.": function(message){
+		"가끔은 그렇지만... 너랑 있을 땐 아니야.": function(message){
 			$.im_a_poet = true;
 
 			n(message);
-			j("오 니키, 이 아마추어 시인 같으니라고. Ah Nicky, you amateur poet."); // 이 아마추어 시인같으니라구.
+			j("오 니키, 이 아마추어 시인 같으니라고."); // 이 아마추어 시인같으니라구.
 			n("나 프랑스 빵이랑 와인 좀 갖다줘. Get me some french breads and wine,");
 			n("내가 해본 말 중에 제일 오글거리는 말이었던 것 같으니까. Coz that's got to be the cheesiest thing I've ever said."); // 그건 틀림없이 내가 ~ 말이었던 것 같으니까.
-			j("사과할 필요 없어. Apologize for nothing.");
+			j("사과할 필요 없어.");
 			n("어쨌든...");
 			Thanks();
 		},
@@ -76,11 +76,11 @@ function Inception_Awake(message){
 	n(message);
 	n("그게 아니면 영화는 전부 거짓[말]일 수밖에 없잖아."); // 아래의 "거짓말"이랑 맞추려고. 둘 다 "lie"임
 	n("뭐 하러 거짓말 속에서 살아가는데?");
-	j("오 니키, 이 아마추어 시인 같으니라고. Ah Nicky, you amateur poet."); // 이 아마추언 시인같으니라고.
+	j("오 니키, 이 아마추어 시인 같으니라고."); // 이 아마추언 시인같으니라고.
 	j("그래서 영화는 좋았나 보지?");
 
 	Choose({
-		"응, 완전 좋았어. Aw yiss. Yes I did.": function(message){
+		"응, 완전 좋았어.": function(message){
 			n(message);
 			Thanks();
 		},
@@ -91,7 +91,7 @@ function Inception_Awake(message){
 			n("어쩄든...");
 			Thanks();
 		},
-		"**브와아아아아아앙** BWOOOOOOOOOOONG": function(message){ // how is this supposed to be pronounced? ask LOL
+		"**브와아아아아아앙**": function(message){ // BWOOOOOOONG <- how is this supposed to be pronounced? ask LOL
 			n(message);
 			j("좋았다는 걸로 받아들일게.");
 			Thanks();
@@ -174,7 +174,7 @@ function Thanks(){
 		"절대, 절대 못 말해.": function(message){ // they can never, ever know.
 			$.coming_out_readiness="no";
 			n(message);
-			j("진짜, 절대로? Really, never?");
+			j("진짜, 절대로?");
 			Hiding();
 		},
 		"나도 말할 수 있었으면 좋겠어.": function(message){
