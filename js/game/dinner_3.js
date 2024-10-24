@@ -10,9 +10,9 @@ function Start_Dinner_3(){
 	n("Mom.");
 
 	Choose({
-		"That's why I'm studying more with Jack.": Tutor,
-		"Look, I'm trying. I really am.": Tutor,
-		"My grades are fine.": Tutor
+		"그래서 잭이랑 더 많이 공부하는 거예요.": Tutor, // That's why I'm studying more with Jack.
+		"저 노력하고 있어요. 진짜로요.": Tutor, //  Look, I'm trying. I really am.
+		"제 성적 괜찮아요.": Tutor // tl awk // My grades are fine.
 	});
 
 }
@@ -20,23 +20,23 @@ function Start_Dinner_3(){
 function Tutor(message){
 
 	n(message);
-	m("I'm worried for you. Jack's not a good influence.");
+	m("난 네가 걱정돼서 그래. 잭은 좋은 영향이 아니야. I'm worried for you. Jack's not a good influence.");
 
 	if($.hippies){
-		m("I think his parents might even be drug addicts...");
-		n("What makes you say th--");
+		m("잭의 부모님이 마약 중독자일 수도 있어... I think his parents might even be drug addicts...");
+		n("뭐 때문에 그렇게 말하는 건데--"); // What makes you say th--
 	}else if($.im_a_poet){
-		m("All he does is do poetry.");
-		n("What makes you say th--");
+		m("걔는 시 [쓰는] 것밖에 안 하잖아. All he does is do poetry.");
+		n("뭐 때문에 그렇게 말하는 건데--");
 	}
 	
-	m("I'm getting you a home tutor.");
-	n("...what?");
+	m("너한테 과외 선생님 붙여줄거야. I'm getting you a home tutor."); // tl awk // [너] 과외 선생님을 구했어.
+	n("...네?");
 
 	if($.studying_subject!=$.studying_subject_2){
-		m("She'll be tutoring you in "+$.studying_subject+" and "+$.studying_subject_2+".");
+		m($.studying_subject+"이랑 "+$.studying_subject_2+"을 과외해줄거란다.");
 	}else{
-		m("She'll be tutoring you in "+$.studying_subject+".");
+		m($.studying_subject+"을 과외해줄거란다.");
 	}
 
 	m("Her name is Claire. She's smart, pretty, and Caucasian. She's your age, too.");
