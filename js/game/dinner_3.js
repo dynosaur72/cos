@@ -10,9 +10,9 @@ function Start_Dinner_3(){
 	n("Mom.");
 
 	Choose({
-		"그래서 잭이랑 더 많이 공부하는 거예요.": Tutor, // That's why I'm studying more with Jack.
+		"그래서 잭이랑 더 공부하는 거예요.": Tutor, // That's why I'm studying more with Jack.
 		"저 노력하고 있어요. 진짜로요.": Tutor, //  Look, I'm trying. I really am.
-		"제 성적 괜찮아요.": Tutor // tl awk // My grades are fine.
+		"제 성적은 멀쩡하다고요.": Tutor // tl awk // My grades are fine.
 	});
 
 }
@@ -24,50 +24,50 @@ function Tutor(message){
 
 	if($.hippies){
 		m("잭의 부모님이 마약 중독자일 수도 있어... I think his parents might even be drug addicts...");
-		n("뭐 때문에 그렇게 말하는 건데--"); // What makes you say th--
+		n("왜 그런 말--"); // What makes you say th--
 	}else if($.im_a_poet){
-		m("걔는 시 [쓰는] 것밖에 안 하잖아. All he does is do poetry.");
-		n("뭐 때문에 그렇게 말하는 건데--");
+		m("걔는 시짓기밖에 안 하잖아. All he does is do poetry.");
+		n("왜 그런 말을--");
 	}
 	
-	m("너한테 과외 선생님 붙여줄거야. I'm getting you a home tutor."); // tl awk // [너] 과외 선생님을 구했어.
+	m("과외 선생님을 붙여줄게. I'm getting you a home tutor."); // tl awk // [너] 과외 선생님을 구했어.
 	n("...네?");
 
 	if($.studying_subject!=$.studying_subject_2){
-		m($.studying_subject+"이랑 "+$.studying_subject_2+"을 과외해줄거란다.");
+		m($.studying_subject+"이랑 "+$.studying_subject_2+"을 가르쳐줄거야.");
 	}else{
-		m($.studying_subject+"을 과외해줄거란다.");
+		m($.studying_subject+"을 가르쳐줄거야.");
 	}
 
-	m("Her name is Claire. She's smart, pretty, and Caucasian. She's your age, too.");
+	m("이름은 클레어야. 똑똑하고, 예쁘고, 백인이고. 너랑 나이도 비슷해. Her name is Claire. She's smart, pretty, and Caucasian. She's your age, too.");
 
 	Choose({
-		"Are you trying to stop me from seeing Jack?": Tutor_Seeing,
-		"Are you trying to matchmake me with her?": Tutor_Matchmake,
-		"Can we talk about tutors another time?": Tutor_Forget
+		"잭이랑 그만 만나게 하려고 이러는 거예요? Are you trying to stop me from seeing Jack?": Tutor_Seeing, // 보다 < 만나다
+		"걔랑 절 엮으려고 하시는 거예요? Are you trying to matchmake me with her?": Tutor_Matchmake,
+		"이 얘기는 나중에 하면 안 돼요? Can we talk about tutors another time?": Tutor_Forget
 	});
 
 }
 
 function Tutor_Seeing(message){
 	n(message);
-	m("I'm sorry, <i>seeing</i> Jack?");
-	m("Be careful how you say that. You make it sound like...");
+	m("잠깐, 잭이랑 <b>만난다고</b>? I'm sorry, <i>seeing</i> Jack?");
+	m("말 조심하렴. 그렇게 말하니까... Be careful how you say that. You make it sound like...");
 	
 	Choose({
-		"Like we're dating? Yeah. We are.": function(message){
+		"우리가 사귀는 거 같다고요? 네. 우리/저희 사귀어요. Like we're dating? Yeah. We are.": function(message){
 			n(message);
 			m(". . .");
 			n(". . .");
-			n("...Hello?");
+			n("...저기요?");
 			m(". . .");
-			n("Anyone there?");
+			n("아무도 안 계세요? Anyone there?"); // tl awk
 			m(". . .");
 			Threat_School();
 		},
-		"I just meant meeting Jack.": function(message){
+		"그냥 I just meant meeting Jack.": function(message){ // 그냥 논다는 뜻이었어요.
 			n(message);
-			m("Okay. Just being clear about some things.");
+			m("알겠어. Okay. Just being clear about some things.");
 			n("Yeah.");
 			m(". . .");
 			m("Claire's really cute.");
@@ -75,10 +75,10 @@ function Tutor_Seeing(message){
 			m("She has perky breasts.");
 			Threat_Tutor();
 		},
-		"We're. Not. Boyfriends.": function(message){
+		"우리/저희. 안. 사귄다고요. We're. Not. Boyfriends.": function(message){
 			n(message);
 			m(". . .");
-			m("Okay.");
+			m("그래. Okay.");
 			m("I never said you were, but... okay.");
 			n("We're friends.");
 
@@ -225,14 +225,14 @@ function Threat_School(){
 
 	$.changing_schools = true;
 	
-	m("You're changing schools.");
+	m("You're changing schools."); // 전학가자
 
 	Show("nicky","dinner_nicky_outrage");
 
-	n("WHAT?!");
-	m("I think it's not just Jack, it's the entire school that's a bad influence on you.");
-	n("ARE YOU SERIOUS.");
-	m("The whole Canadian culture is making you confused about who you are.");
+	n("<b>뭐라고요?!</b>");
+	m("잭뿐만이 아니야. 학교 전체 분위기가 악영향을 주는 것 같아. I think it's not just Jack, it's the entire school that's a bad influence on you.");
+	n("ARE YOU SERIOUS."); //지금 장난하시는 거죠.
+	m("이 캐나다 문화가 너를 너 자신에 대해서 헷갈리게 만들고 있잖니. tl awk. The whole Canadian culture is making you confused about who you are.");
 
 	Show("nicky","dinner_nicky_defiant");
 
