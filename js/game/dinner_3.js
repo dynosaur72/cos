@@ -24,7 +24,7 @@ function Tutor(message){
 
 	if($.hippies){
 		m("잭의 부모님이 마약 중독자일 수도 있어... I think his parents might even be drug addicts...");
-		n("왜 그런 말--"); // What makes you say th--
+		n("왜 그런 말을--"); // What makes you say th--
 	}else if($.im_a_poet){
 		m("걔는 시짓기밖에 안 하잖아. All he does is do poetry.");
 		n("왜 그런 말을--");
@@ -39,10 +39,10 @@ function Tutor(message){
 		m($.studying_subject+"을 가르쳐줄거야.");
 	}
 
-	m("이름은 클레어야. 똑똑하고, 예쁘고, 백인이고. 너랑 나이도 비슷해. Her name is Claire. She's smart, pretty, and Caucasian. She's your age, too.");
+	m("이름은 클레어야. 똑똑하고, 예쁘고, 백인이고. 너랑 나이도 비슷해.");
 
 	Choose({
-		"잭이랑 그만 만나게 하려고 이러는 거예요? Are you trying to stop me from seeing Jack?": Tutor_Seeing, // 보다 < 만나다
+		"잭을 그만 만나게 하려고 이러는 거예요? Are you trying to stop me from seeing Jack?": Tutor_Seeing, // 보다 < 만나다
 		"걔랑 절 엮으려고 하시는 거예요? Are you trying to matchmake me with her?": Tutor_Matchmake,
 		"이 얘기는 나중에 하면 안 돼요? Can we talk about tutors another time?": Tutor_Forget
 	});
@@ -51,8 +51,8 @@ function Tutor(message){
 
 function Tutor_Seeing(message){
 	n(message);
-	m("잠깐, 잭이랑 <b>만난다고</b>? I'm sorry, <i>seeing</i> Jack?");
-	m("말 조심하렴. 그렇게 말하니까... Be careful how you say that. You make it sound like...");
+	m("잠깐, 잭을 <b>만난다고</b>?");
+	m("말 조심하렴. 그렇게 말하니까...");
 	
 	Choose({
 		"우리가 사귀는 거 같다고요? 네. 우리/저희 사귀어요. Like we're dating? Yeah. We are.": function(message){
@@ -78,15 +78,15 @@ function Tutor_Seeing(message){
 		"우리/저희. 남친. 사이. 아니에요. We're. Not. Boyfriends.": function(message){
 			n(message);
 			m(". . .");
-			m("그래. Okay.");
-			m("그런 사이라고 한 적 없는데... 그래. I never said you were, but... okay.");
+			m("알겠어. Okay.");
+			m("그런 사이라고 한 적 없는데... 알겠어. I never said you were, but... okay.");
 			n("우린/저흰 친구예요. We're friends.");
 
 			if($.relationship=="friend"){
 				m("'좋은 친구'...");
 			}
 			if($.relationship=="best friend"){
-				m("절친..."); // 단짝 친구 라는 말을 쓰는 사람은 없겠지?
+				m("절친한 친구..."); // 단짝 친구 라는 말을 쓰는 사람은 없겠지?
 			}
 
 			Threat_Tutor();
@@ -97,42 +97,42 @@ function Tutor_Seeing(message){
 
 function Tutor_Matchmake(message){
 	n(message);
-	m("Well, if that's what you want, I could!");
-	n("nooooo.");
+	m("글쎄, 네가 그랬으면 좋겠다면/그걸 바란다면, 할 수 있지! Well, if that's what you want, I could!");
+	n("안돼애애.");
 	m("Don't be shy! You're growing up to be a man.");
-	m("And you're going to give me lots of grandkids.");
+	m("그리고 나한테 손주들을 많이 [낳아줄거라고]. And you're going to give me lots of grandkids.");
 
 	Choose({
-		"Stop it! I haven't even met Claire yet!": function(message){
+		"그만하세요! 아직 클레어를 만나보지도 않았다고요!": function(message){
 			n(message);
-			m("Yet!");
-			m("She's coming over tomorrow!");
-			n("What? But I promised Jack--");
+			m("아직!");
+			m("내일 올 거야!"); // she's coming over tomorrow!
+			n("뭐라고요? 잭이랑 약속했는데--"); // What? But I promised Jack--
 			m("I ironed your best clothes. You'll make a good first impression.");
 			Threat_Tutor();
 		},
-		"The odds of that are 50-50, coz I'm bi.": function(message){
+		"그럴 확률은 50%예요. 전 바이거든요.The odds of that are 50-50, coz I'm bi.": function(message){
 
 			$.admit_bisexuality = true;
 
 			n(message);
-			m("Um. Bi?...");
+			m("엄. 바이?..."); // Um.
 
 			Show("nicky","dinner_nicky_defiant");
 
-			n("Yes. As in BISEXUAL.");
-			n("As in I AM SEXUALLY ATTRACTED TO BOTH MEN AND WOMEN.");
+			n("네. 다른 말로 <b>바이섹슈얼</b>. Yes. As in BISEXUAL.");
+			n("다른 말로 <b>남자랑 여자한테 둘 다 성적으로 끌린다고요</b>. As in I AM SEXUALLY ATTRACTED TO BOTH MEN AND WOMEN.");
 			m(". . .");
 			n(". . .");
 			Threat_School();
 		},
-		"No. I don't ever want to have kids.": function(message){
+		"싫어요. 전 평생 애 갖고 싶지 않아요. No. I don't ever want to have kids.": function(message){
 			n(message);
-			m("You'll change your mind when you grow up.");
-			m("Raising a child is wonderful. Your children will look up to you!");
-			n("...of course, you narcissist.");
-			m("Excuse me?");
-			n("Nothing.");
+			m("크면 마음을 바꿀거야. You'll change your mind when you grow up.");
+			m("아이를 키우는 건 wonderful. 네 아이들이 널 존경할거야! Raising a child is wonderful. Your children will look up to you!");
+			n("...물론 그렇겠죠. 나르시시스트.");
+			m("뭐라고?");
+			n("아무것도 아니에요.");
 			m(". . .");
 			Threat_Tutor();
 		}
@@ -141,11 +141,11 @@ function Tutor_Matchmake(message){
 
 function Tutor_Forget(message){
 	n(message);
-	m("No, because I've already scheduled Claire to come over tomorrow.");
-	n("What?!");
-	n("No. I promised to study with Jack tomorrow.");
+	m("안돼. 이미 클레어랑 내일 오기로 약속 잡았거든. No, because I've already scheduled Claire to come over tomorrow.");
+	n("뭐라고요?!");
+	n("안돼요. 내일은 이미 잭이랑 공부하기로 약속했다고요. No. I promised to study with Jack tomorrow.");
 	m(". . .");
-	m("How long did you want to stay over at his place?");
+	m("얼마나 오랫동안 걔네 집에 [있고 싶다고] 했지? How long did you want to stay over at his place?");
 
 	Choose({
 		"Overnight.": function(message){
@@ -231,13 +231,13 @@ function Threat_School(){
 
 	n("<b>뭐라고요?!</b>");
 	m("잭뿐만이 아니야. 학교 전체 분위기가 악영향을 주는 것 같아. I think it's not just Jack, it's the entire school that's a bad influence on you.");
-	n("<b>지금 장난하시는 거죠.</b> ARE YOU SERIOUS."); //지금 장난하시는 거죠.
+	n("<b>지금 장난하시는 거죠.</b>"); //지금 장난하시는 거죠.
 	m("이 캐나다 문화가 너를 너 자신에 대해서 헷갈리게 만들고 있잖니. tl awk. The whole Canadian culture is making you confused about who you are.");
 
 	Show("nicky","dinner_nicky_defiant");
 
 	Choose({
-		"아니요, 엄마의 아시아 문화가 보수적인 거예요. No, it's YOUR Asian culture that's backwards!": function(message){
+		"아니요, *엄마의* 아시아 문화가 보수적인 거예요. No, it's YOUR Asian culture that's backwards!": function(message){
 			n(message);
 			m("그렇게 무례하게 굴면 어떡하니! Don't be so rude!");
 			m("<b>네</b> 문화이기도 하잖아! It's YOUR culture, too!");
