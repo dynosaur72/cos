@@ -7,7 +7,7 @@
 
 function Start_Dinner_3(){
 
-	n("Mom.");
+	n("엄마.");
 
 	Choose({
 		"그래서 잭이랑 더 공부하는 거예요.": Tutor, // That's why I'm studying more with Jack.
@@ -30,7 +30,7 @@ function Tutor(message){
 		n("왜 그런 말을--");
 	}
 	
-	m("과외 선생님을 붙여줄게. I'm getting you a home tutor."); // tl awk // [너] 과외 선생님을 구했어.
+	m("과외 선생님을 붙여줄거야. I'm getting you a home tutor."); // tl awk // [너] 과외 선생님을 구했어.
 	n("...네?");
 
 	if($.studying_subject!=$.studying_subject_2){
@@ -67,26 +67,26 @@ function Tutor_Seeing(message){
 		},
 		"그냥 I just meant meeting Jack.": function(message){ // 그냥 논다는 뜻이었어요.
 			n(message);
-			m("알겠어. Okay. Just being clear about some things.");
-			n("Yeah.");
+			m("알겠어. Okay. Just being clear about some things."); // 그냥 몇 가지를 명확하게 하는거야. 
+			n("네.");
 			m(". . .");
-			m("Claire's really cute.");
-			n("Sure.");
-			m("She has perky breasts.");
+			m("클레어 엄청 귀엽던데. Claire's really cute.");
+			n("그래요. Sure.");
+			m("She has perky breasts."); // 탄력있는 가슴...
 			Threat_Tutor();
 		},
-		"우리/저희. 안. 사귄다고요. We're. Not. Boyfriends.": function(message){
+		"우리/저희. 남친. 사이. 아니에요. We're. Not. Boyfriends.": function(message){
 			n(message);
 			m(". . .");
 			m("그래. Okay.");
-			m("I never said you were, but... okay.");
-			n("We're friends.");
+			m("그런 사이라고 한 적 없는데... 그래. I never said you were, but... okay.");
+			n("우린/저흰 친구예요. We're friends.");
 
 			if($.relationship=="friend"){
-				m("\"Good pals\"...");
+				m("'좋은 친구'...");
 			}
 			if($.relationship=="best friend"){
-				m("\"BEST friends\"...");
+				m("절친..."); // 단짝 친구 라는 말을 쓰는 사람은 없겠지?
 			}
 
 			Threat_Tutor();
@@ -231,27 +231,27 @@ function Threat_School(){
 
 	n("<b>뭐라고요?!</b>");
 	m("잭뿐만이 아니야. 학교 전체 분위기가 악영향을 주는 것 같아. I think it's not just Jack, it's the entire school that's a bad influence on you.");
-	n("ARE YOU SERIOUS."); //지금 장난하시는 거죠.
+	n("<b>지금 장난하시는 거죠.</b> ARE YOU SERIOUS."); //지금 장난하시는 거죠.
 	m("이 캐나다 문화가 너를 너 자신에 대해서 헷갈리게 만들고 있잖니. tl awk. The whole Canadian culture is making you confused about who you are.");
 
 	Show("nicky","dinner_nicky_defiant");
 
 	Choose({
-		"No, it's YOUR Asian culture that's backwards!": function(message){
+		"아니요, 엄마의 아시아 문화가 보수적인 거예요. No, it's YOUR Asian culture that's backwards!": function(message){
 			n(message);
-			m("Don't be so rude!");
-			m("It's YOUR culture, too!");
+			m("그렇게 무례하게 굴면 어떡하니! Don't be so rude!");
+			m("<b>네</b> 문화이기도 하잖아! It's YOUR culture, too!");
 			n(". . .");
 			Plot_Twist();
 		},
 		"You can't do this to your CHILD!": function(message){
 			n(message);
 			m("Don't be so rude!");
-			m("I'm your MOTHER, it's my right to do whatever I want with you!");
+			m("난 네 어머니인데, 너한테 내 맘대로 하는 건 내... 권리...? I'm your MOTHER, it's my right to do whatever I want with you!");
 			n(". . .");
 			Plot_Twist();
 		},
-		"Whatever, ALL schools have queer people.": function(message){
+		"상관없어요. *어느 학교든* 퀴어는 있어요. Whatever, ALL schools have queer people.": function(message){
 			n(message);
 			m("Don't be so rude!");
 			m("And watch it, I could change my mind and start homeschooling you.");
