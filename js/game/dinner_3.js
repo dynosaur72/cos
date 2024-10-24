@@ -120,8 +120,8 @@ function Tutor_Matchmake(message){
 
 			Show("nicky","dinner_nicky_defiant");
 
-			n("네. 다른 말로 <b>바이섹슈얼</b>. Yes. As in BISEXUAL.");
-			n("다른 말로 <b>남자랑 여자한테 둘 다 성적으로 끌린다고요</b>. As in I AM SEXUALLY ATTRACTED TO BOTH MEN AND WOMEN.");
+			n("네. 다른 말로 *바이섹슈얼*. Yes. As in BISEXUAL.");
+			n("다른 말로 *남자랑 여자한테 둘 다 성적으로 끌린다고요*. As in I AM SEXUALLY ATTRACTED TO BOTH MEN AND WOMEN.");
 			m(". . .");
 			n(". . .");
 			Threat_School();
@@ -229,31 +229,31 @@ function Threat_School(){
 
 	Show("nicky","dinner_nicky_outrage");
 
-	n("<b>뭐라고요?!</b>");
+	n("*뭐라고요?!*");
 	m("잭뿐만이 아니야. 학교 전체 분위기가 악영향을 주는 것 같아. I think it's not just Jack, it's the entire school that's a bad influence on you.");
-	n("<b>지금 장난하시는 거죠.</b>"); //지금 장난하시는 거죠.
+	n("*지금 장난하시는 거죠.*");
 	m("이 캐나다 문화가 너를 너 자신에 대해서 헷갈리게 만들고 있잖니. tl awk. The whole Canadian culture is making you confused about who you are.");
 
 	Show("nicky","dinner_nicky_defiant");
 
 	Choose({
-		"아니요, *엄마의* 아시아 문화가 보수적인 거예요. No, it's YOUR Asian culture that's backwards!": function(message){
+		"아니요, *엄마네* 아시아 문화가 보수적인 거예요. No, it's YOUR Asian culture that's backwards!": function(message){
 			n(message);
-			m("그렇게 무례하게 굴면 어떡하니! Don't be so rude!");
+			m("그렇게 무례하게 굴면 어떡하니!");
 			m("<b>네</b> 문화이기도 하잖아! It's YOUR culture, too!");
 			n(". . .");
 			Plot_Twist();
 		},
 		"You can't do this to your CHILD!": function(message){
 			n(message);
-			m("Don't be so rude!");
-			m("난 네 어머니인데, 너한테 내 맘대로 하는 건 내... 권리...? I'm your MOTHER, it's my right to do whatever I want with you!");
+			m("그렇게 무례하게 굴면 어떡하니!");
+			m("난 네 어머니인데, 널 내 맘대로 하는 건 내 [권리]야. / 난 네 *어머니야*. 난 너를 내 맘대로 할 자격이 있어. I'm your MOTHER, it's my right to do whatever I want with you!");
 			n(". . .");
 			Plot_Twist();
 		},
-		"상관없어요. *어느 학교든* 퀴어는 있어요. Whatever, ALL schools have queer people.": function(message){
+		"상관없어요. *어느 학교든* 퀴어는 있어요.": function(message){ // Whatever. 소용없어요?
 			n(message);
-			m("Don't be so rude!");
+			m("그렇게 무례하게 굴면 어떡하니!");
 			m("And watch it, I could change my mind and start homeschooling you.");
 			n(". . .");
 			Plot_Twist();
@@ -296,37 +296,37 @@ function Plot_Twist(){
 function Plot_Twist_2(){
 
 	n(". . .");
-	m("Before dinner. I was in your room.");
+	m("저녁 먹기 전에. 네 방에 있었어.");
 
 	// Dinner_1
-	m("You yelled out '"+$.what_you_called_out+"' from downstairs, while I unlocked your phone...");
-	m("And read what you and Jack have been sending to each other.");
-	m("I'm your mother. I have the right.");
+	m("아래층에서 네가 '"+$.what_you_called_out+"'라고 소리칠 동안, 나는 네 [폰]을 잠금해제하고... from downstairs, while I unlocked your phone...");
+	m("너랑 잭이 서로 뭘 보냈는지 읽고 있었지. And read what you and Jack have been sending to each other.");
+	m("난 네 어머니야. 그럴 자격이 있어. I'm your mother. I have the right.");
 
 	n(". . .");
 
 	if($.im_a_poet){
-		m("Weird poetry?");
+		m("이상한 시?");
 	}
 	if($.hippies){
-		m("Talking about smoking marijuana?");
+		m("대마초 피는 얘기?");
 	}
 	if($.im_a_poet || $.hippies){
-		m("Helping you lie to your own mother?");
+		m("네 어머니한테 거짓말하는 거 도와주기? Helping you lie to your own mother?");
 		m("What else have you been doing behind my back?");
 	}
 
 	Choose({
-		"This has to be a bad dream.": function(message){
+		"이건 악몽이어야만 해. This has to be a bad dream.": function(message){
 			n(message);
-			m("Like that 'Deception' movie?");
-			n("It's... it's 'Inception'.");
-			m("Don't talk back to me.");
+			m("그 영화 <디셉션>처럼?");
+			n("제목... 제목 <인셉션>이에요. It's... it's 'Inception'.");
+			m("말대꾸하지 마. Don't talk back to me.");
 			Plot_Twist_3();
 		},
-		"I'm sorry. I'm so sorry.": function(message){
+		"잘못했어요. 정말 잘못했어요. / 죄송해요. 진짜 죄송해요. I'm sorry. I'm so sorry.": function(message){
 			n(message);
-			m("I forgive you.");
+			m("널 용서해. I forgive you.");
 			m("You're my child, of course I forgive you.");
 			Plot_Twist_3();
 		},
