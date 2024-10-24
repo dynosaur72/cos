@@ -254,7 +254,7 @@ function Threat_School(){
 		"상관없어요. *어느 학교든* 퀴어는 있어요.": function(message){ // Whatever. 소용없어요?
 			n(message);
 			m("그렇게 무례하게 굴면 어떡하니!");
-			m("And watch it, I could change my mind and start homeschooling you.");
+			m("그리고 조심해, 마음 바꿔서 홈스쿨링할 수도 있어. And watch it, I could change my mind and start homeschooling you.");
 			n(". . .");
 			Plot_Twist();
 		}
