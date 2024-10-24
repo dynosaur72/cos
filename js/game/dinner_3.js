@@ -20,7 +20,7 @@ function Start_Dinner_3(){
 function Tutor(message){
 
 	n(message);
-	m("난 네가 걱정돼서 그래. 잭은 좋은 영향이 아니야. I'm worried for you. Jack's not a good influence.");
+	m("엄마는 네가 걱정돼서 그래. 잭은 좋은 영향이 아니야. I'm worried for you. Jack's not a good influence.");
 
 	if($.hippies){
 		m("잭의 부모님이 마약 중독자일 수도 있어... I think his parents might even be drug addicts...");
@@ -97,10 +97,10 @@ function Tutor_Seeing(message){
 
 function Tutor_Matchmake(message){
 	n(message);
-	m("글쎄, 네가 그랬으면 좋겠다면/그걸 바란다면, 할 수 있지! Well, if that's what you want, I could!");
+	m("글쎄, 네가 그랬으면 좋겠다면/그걸 바란다면, 해줄[엮어줄] 수 있지! Well, if that's what you want, I could!");
 	n("안돼애애.");
 	m("Don't be shy! You're growing up to be a man.");
-	m("그리고 나한테 손주들을 많이 [낳아줄거라고]. And you're going to give me lots of grandkids.");
+	m("그리고 엄마한테 손주들을 많이 [낳아줄거라고/남겨줄거라고]. And you're going to give me lots of grandkids.");
 
 	Choose({
 		"그만하세요! 아직 클레어를 만나보지도 않았다고요!": function(message){
@@ -157,7 +157,7 @@ function Tutor_Forget(message){
 			m(". . .");
 			Threat_School();
 		},
-		"Just the afternoon.": function(message){
+		"오후만이요. Just the afternoon.": function(message){
 			n(message);
 			if($.lying_about_hanging_out){
 				m("I knew it. I caught your lie earlier.");
@@ -168,7 +168,7 @@ function Tutor_Forget(message){
 			m("You're just hanging out with him.");
 			Threat_Tutor();
 		},
-		"Maybe an hour or so.": function(message){
+		"한 시간 쯤이요. Maybe an hour or so.": function(message){
 			n(message);
 			m("That's not enough to really get studying done.");
 			if($.lying_about_hanging_out){
@@ -313,7 +313,7 @@ function Plot_Twist_2(){
 	}
 	if($.im_a_poet || $.hippies){
 		m("네 어머니한테 거짓말하는 거 도와주기? Helping you lie to your own mother?");
-		m("What else have you been doing behind my back?");
+		m("이것 말고 엄마 몰래 뭘 하고 있었던 거니? What else have you been doing behind my back?"); 
 	}
 
 	Choose({
