@@ -201,7 +201,7 @@ function Buddy_4(message){
 	n(message); // "The wrong idea might be the right idea." // NONE of my playthroughs have this part
 	m("아, 그거 스님들 선명상 같은 거에서 나온 말이지? Oh, that's like a zen thing, right?"); //
 	n("엄.");
-	m("선명상은 자연이랑도 관련있는데, 네 친구/동급생/학우 잭은... Zen is also about nature, and your classmate Jack, he...");
+	m("선명상은 자연이랑도 관련있는데, 네 반에 잭은... Zen is also about nature, and your classmate Jack, he...");
 	m("...그러니까, 자연스러워 보이지 않는데?"); // ...you know, doesn't seem natural?
 	Choose({
 		"잭이 게이라고 생각하는거죠.": function(message){ //You think he's gay.
