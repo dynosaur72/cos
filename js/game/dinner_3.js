@@ -10,7 +10,7 @@ function Start_Dinner_3(){
 	n("엄마.");
 
 	Choose({
-		"그래서 잭이랑 더 공부하는 거예요.": Tutor, // That's why I'm studying more with Jack.
+		"그래서 잭이랑 더 공부하는 거잖아요.": Tutor, // That's why I'm studying more with Jack.
 		"저 노력하고 있어요. 진짜로요.": Tutor, //  Look, I'm trying. I really am.
 		"제 성적은 멀쩡하다고요.": Tutor // tl awk // My grades are fine.
 	});
@@ -26,7 +26,7 @@ function Tutor(message){
 		m("잭의 부모님이 마약 중독자일 수도 있어... I think his parents might even be drug addicts...");
 		n("왜 그런 말을--"); // What makes you say th--
 	}else if($.im_a_poet){
-		m("걔는 시짓기밖에 안 하잖아. All he does is do poetry.");
+		m("시짓기밖에 안 하고 말이야. All he does is do poetry.");
 		n("왜 그런 말을--");
 	}
 	
@@ -42,7 +42,7 @@ function Tutor(message){
 	m("이름은 클레어야. 똑똑하고, 예쁘고, 백인이고. 너랑 나이도 비슷해.");
 
 	Choose({
-		"잭을 그만 만나게 하려고 이러는 거예요? Are you trying to stop me from seeing Jack?": Tutor_Seeing, // 보다 < 만나다
+		"잭을 그만 만나게 하려고 이러는 거예요? Are you trying to stop me from seeing Jack?": Tutor_Seeing, // 잭이랑?
 		"걔랑 절 엮으려고 하시는 거예요? Are you trying to matchmake me with her?": Tutor_Matchmake,
 		"이 얘기는 나중에 하면 안 돼요? Can we talk about tutors another time?": Tutor_Forget
 	});
@@ -55,7 +55,7 @@ function Tutor_Seeing(message){
 	m("말 조심하렴. 그렇게 말하니까...");
 	
 	Choose({
-		"우리가 사귀는 거 같다고요? 네. 우리/저희 사귀어요. Like we're dating? Yeah. We are.": function(message){
+		"사귀는 거 같다고요? 네. 우리/저희 사귀어요. Like we're dating? Yeah. We are.": function(message){
 			n(message);
 			m(". . .");
 			n(". . .");
@@ -79,7 +79,7 @@ function Tutor_Seeing(message){
 			n(message);
 			m(". . .");
 			m("알겠어. Okay.");
-			m("그런 사이라고 한 적 없는데... 알겠어. I never said you were, but... okay.");
+			m("그런 사이라고 한 적 없지만... 알겠어. I never said you were, but... okay.");
 			n("우린/저흰 친구예요. We're friends.");
 
 			if($.relationship=="friend"){
@@ -141,23 +141,23 @@ function Tutor_Matchmake(message){
 
 function Tutor_Forget(message){
 	n(message);
-	m("안돼. 이미 클레어랑 내일 오기로 약속 잡았거든. No, because I've already scheduled Claire to come over tomorrow.");
+	m("안돼. 이미 내일 클레어가 오기로 약속 잡아놨거든.");
 	n("뭐라고요?!");
-	n("안돼요. 내일은 이미 잭이랑 공부하기로 약속했다고요. No. I promised to study with Jack tomorrow.");
+	n("안돼요. 내일은 잭이랑 공부하기로 약속했다고요. ");
 	m(". . .");
-	m("얼마나 오랫동안 걔네 집에 [있고 싶다고] 했지? How long did you want to stay over at his place?");
+	m("얼마나 오래 걔네 집에 [있고 싶다고] 했지? How long did you want to stay over at his place?"); // 얼마나 오래 있으려고 했는데?
 
 	Choose({
-		"Overnight.": function(message){
+		"자고 오려고요.": function(message){
 			n(message);
 			m(". . .");
 			n(". . .");
-			n("...Hello?");
-			n("It's not weird. Friends have sleepovers all the time.");
+			n("...저기요?");
+			n("이상한거 아니거든요. 파자마 파티 몰라요? It's not weird. Friends have sleepovers all the time.");
 			m(". . .");
 			Threat_School();
 		},
-		"오후만이요. Just the afternoon.": function(message){
+		"오후동안만요. Just the afternoon.": function(message){
 			n(message);
 			if($.lying_about_hanging_out){
 				m("I knew it. I caught your lie earlier.");
@@ -225,7 +225,7 @@ function Threat_School(){
 
 	$.changing_schools = true;
 	
-	m("You're changing schools."); // 전학가자
+	m("전학가자."); 
 
 	Show("nicky","dinner_nicky_outrage");
 
@@ -237,23 +237,57 @@ function Threat_School(){
 	Show("nicky","dinner_nicky_defiant");
 
 	Choose({
-		"아니요, *엄마네* 아시아 문화가 보수적인 거예요. No, it's YOUR Asian culture that's backwards!": function(message){
+		"아니요, *엄마네* 동양 문화가 보수적인거잖아요! No, it's YOUR Asian culture that's backwards!": function(message){
 			n(message);
 			m("그렇게 무례하게 굴면 어떡하니!");
 			m("<b>네</b> 문화이기도 하잖아! It's YOUR culture, too!");
 			n(". . .");
 			Plot_Twist();
 		},
-		"You can't do this to your CHILD!": function(message){
+		"어떻게 엄마		m("Well, if you also want to hang out with her, that's good too.");
+			m("Anything to make you more manly.");
+			n("ugh.");
+			m("Oh.");
+			m("One more thing.");
+			Plot_Twist();
+		}
+	});
+
+}
+
+function Threat_School(){
+
+	$.changing_schools = true;
+	
+	m("전학가자."); 
+
+	Show("nicky","dinner_nicky_outrage");
+
+	n("*뭐라고요?!*");
+	m("잭뿐만이 아니야. 학교 전체 분위기가 악영향을 주는 것 같아. I think it's not just Jack, it's the entire school that's a bad influence on you.");
+	n("*지금 장난하시는 거죠.*");
+	m("이 캐나다 문화가 너를 너 자신에 대해서 헷갈리게 만들고 있잖니. tl awk. The whole Canadian culture is making you confused about who you are.");
+
+	Show("nicky","dinner_nicky_defiant");
+
+	Choose({
+		"아니요, *엄마네* 동양 문화가 보수적인거잖아요/뒤쳐진거잖아요! No, it's YOUR Asian culture that's backwards!": function(message){
 			n(message);
-			m("그렇게 무례하게 굴면 어떡하니!");
-			m("난 네 어머니인데, 널 내 맘대로 하는 건 내 [권리]야. / 난 네 *어머니야*. 난 너를 내 맘대로 할 자격이 있어. I'm your MOTHER, it's my right to do whatever I want with you!");
+			m("그렇게 무례하게 굴면 어떡해!"); // 그렇게 무례하면 못써!
+			m("*네* 문화이기도 하잖니!");
 			n(". . .");
 			Plot_Twist();
 		},
-		"상관없어요. *어느 학교든* 퀴어는 있어요.": function(message){ // Whatever. 소용없어요?
+		"어떻게 *엄마 애한테* 이럴 수가 있어요! You can't do this to your CHILD!": function(message){
 			n(message);
-			m("그렇게 무례하게 굴면 어떡하니!");
+			m("그렇게 무례하게 굴면 어떡해!");
+			m("난 네 어머니잖니, [너에게 뭐든 할 수 있는 권리가 있다고!] 널 내 맘대로 하는 건 내 [권리]야. / 난 네 *어머니야*. 난 너를 내 맘대로 할 자격이 있어. I'm your MOTHER, it's my right to do whatever I want with you!");
+			n(". . .");
+			Plot_Twist();
+		},
+		"상관없어요./어쩌라고요. *어느 학교를* 가든 퀴어는 있다고요.": function(message){ // Whatever. 소용없어요?
+			n(message);
+			m("그렇게 무례하게 굴면 어떡해!");
 			m("그리고 조심해, 마음 바꿔서 홈스쿨링할 수도 있어. And watch it, I could change my mind and start homeschooling you.");
 			n(". . .");
 			Plot_Twist();
@@ -264,8 +298,8 @@ function Threat_School(){
 
 function Plot_Twist(){
 
-	m("Yesterday, when you were supposedly studying with Jack?");
-	m("I know you secretly went off to watch a movie.");
+	m("어재, 잭이랑 공부했다고 했지? Yesterday, when you were supposedly studying with Jack?");
+	m("그래놓고 몰래 영화관 간 거 다 알고 있어. I know you secretly went off to watch a movie.");
 
 	Show("nicky","dinner_nicky_sit");
 	n(". . .");
@@ -273,20 +307,20 @@ function Plot_Twist(){
 	Show("clock_time","clock_1920");
 
 	Choose({
-		"Oh my god. You read my texts.": function(message){
+		"[미쳤다.] 엄마 제 문자를 읽었어요[?] Oh my god. You read my texts.": function(message){ // 맙소사ㅋㅋ
 			n(message);
-			m("Yes. See how smart you can be when you're not with Jack?");
+			m("그래. 잭이 없으니 이렇게 똑똑하잖니? Yes. See how smart you can be when you're not with Jack?");
 			Plot_Twist_2();
 		},
-		"No, we didn't. We studied.": function(message){
+		"아뇨, 안 그랬는데요. 저희 공부했어요. No, we didn't. We studied.": function(message){
 			n(message);
 			m("You are a very stubborn boy.");
 			m("I read your text messages.");
 			Plot_Twist_2();
 		},
-		"What makes you think that?": function(message){
+		"왜 그렇게 생각하는데요? What makes you think that?": function(message){
 			n(message);
-			m("Because I read your text messages.");
+			m("네 문자를 읽었으니까. Because I read your text messages.");
 			Plot_Twist_2();
 		}
 	});
@@ -299,9 +333,9 @@ function Plot_Twist_2(){
 	m("저녁 먹기 전에. 네 방에 있었어.");
 
 	// Dinner_1
-	m("아래층에서 네가 '"+$.what_you_called_out+"'라고 소리칠 동안, 나는 네 [폰]을 잠금해제하고... from downstairs, while I unlocked your phone...");
-	m("너랑 잭이 서로 뭘 보냈는지 읽고 있었지. And read what you and Jack have been sending to each other.");
-	m("난 네 어머니야. 그럴 자격이 있어. I'm your mother. I have the right.");
+	m("네가 아래층에서 '"+$.what_you_called_out+"'라고 소리치는 동안, 네 핸드폰을 잠금해제하고... from downstairs, while I unlocked your phone..."); // 저녁 먹기 전에, 네 방에 갔었어.
+	m("너랑 잭이 서로 뭘 보냈는지 읽고 있었지. And read what you and Jack have been sending to each other."); // 네가 $$라고 소리질렀을 떄 말이야.
+	m("난 네 어머니야. 그럴 자격이/권리가 있어. I'm your mother. I have the right."); // 그리고 잭이랑 한 문자 다 읽었어.
 
 	n(". . .");
 
@@ -312,28 +346,28 @@ function Plot_Twist_2(){
 		m("대마초 피는 얘기?");
 	}
 	if($.im_a_poet || $.hippies){
-		m("네 어머니한테 거짓말하는 거 도와주기? Helping you lie to your own mother?");
-		m("이것 말고 엄마 몰래 뭘 하고 있었던 거니? What else have you been doing behind my back?"); 
+		m("네 어머니한테 [엄마한테] 거짓말하는 거 도와주기? Helping you lie to your own mother?");
+		m("엄마가 모르는 데서 또 뭘 했니? / 엄마 몰래 또 뭘 하고 있었던 거니? What else have you been doing behind my back?"); 
 	}
 
 	Choose({
 		"이건 악몽이어야만 해. This has to be a bad dream.": function(message){
 			n(message);
-			m("그 영화 <디셉션>처럼?");
-			n("제목... 제목 <인셉션>이에요. It's... it's 'Inception'.");
-			m("말대꾸하지 마. Don't talk back to me.");
+			m("그 <디셉션>인가 하는 영화처럼?"); // 그 영화 <디셉션>처럼? Like that Deception movie?
+			n("...<인셉션>이에요.");
+			m("말대꾸하지 마.");
 			Plot_Twist_3();
 		},
-		"잘못했어요. 정말 잘못했어요. / 죄송해요. 진짜 죄송해요. I'm sorry. I'm so sorry.": function(message){
+		"미안해요. 진짜 미안해요. I'm sorry. I'm so sorry.": function(message){
 			n(message);
-			m("널 용서해. I forgive you.");
-			m("You're my child, of course I forgive you.");
+			m("용서한단다.");
+			m("넌 내 아이잖니. 당연히 용서하지.");
 			Plot_Twist_3();
 		},
-		"I hate you.": function(message){
+		"엄마 죽도록 미워요. I hate you.": function(message){
 			n(message);
-			m("That's okay.");
-			m("I still love you, Nick.");
+			m("괜찮아. That's okay.");
+			m("엄만 아직도 널 사랑해, 닉. I still love you, Nick.");
 			Plot_Twist_3();
 		},
 	});
