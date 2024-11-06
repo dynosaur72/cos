@@ -145,7 +145,7 @@ function Tutor_Forget(message){
 	n("뭐라고요?!");
 	n("안돼요. 내일은 잭이랑 공부하기로 약속했다고요. ");
 	m(". . .");
-	m("얼마나 오래 걔네 집에 [있고 싶다고] 했지? How long did you want to stay over at his place?"); // 얼마나 오래 있으려고 했는데?
+	m("얼마나 오래 걔네 집에 [있고 싶다고/있겠다고] 했지? How long did you want to stay over at his place?"); // 얼마나 오래 있으려고 했는데?
 
 	Choose({
 		"자고 오려고요.": function(message){
@@ -157,22 +157,22 @@ function Tutor_Forget(message){
 			m(". . .");
 			Threat_School();
 		},
-		"오후동안만요. Just the afternoon.": function(message){
+		"오후동안만요.": function(message){
 			n(message);
 			if($.lying_about_hanging_out){
-				m("I knew it. I caught your lie earlier.");
-				n("Huh?");
+				m("그럴 줄 알았어. I caught your lie earlier."); // I knwe it. 아까 네 거짓말을 잡아냈어.
+				n("네? Huh?"); // 에? ㅋㅋ
 			}else{
-				m("...I knew it.");
+				m("...그럴 줄 알았어."); // I knew it.
 			}
-			m("You're just hanging out with him.");
+			m("너 잭이랑 놀기만 하는 거지. You're just hanging out with him.");
 			Threat_Tutor();
 		},
-		"한 시간 쯤이요. Maybe an hour or so.": function(message){
+		"한 시간 쯤이요.": function(message){
 			n(message);
-			m("That's not enough to really get studying done.");
+			m("제대로 공부하기엔 부족한 시간인데. That's not enough to really get studying done.");
 			if($.lying_about_hanging_out){
-				m("I knew it. I caught your lie earlier.");
+				m("그럴 줄 알았어. I caught your lie earlier."); // I knew it.
 				n("Huh?");
 			}
 			m("You're just hanging out with him.");
