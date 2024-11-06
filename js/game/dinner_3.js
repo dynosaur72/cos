@@ -30,7 +30,7 @@ function Tutor(message){
 		n("왜 그런 말을--");
 	}
 	
-	m("과외 선생님을 붙여줄거야. I'm getting you a home tutor."); // tl awk // [너] 과외 선생님을 구했어.
+	m("과외 선생님을 구했어");
 	n("...네?");
 
 	if($.studying_subject!=$.studying_subject_2){
@@ -55,7 +55,7 @@ function Tutor_Seeing(message){
 	m("말 조심하렴. 그렇게 말하니까...");
 	
 	Choose({
-		"사귀는 거 같다고요? 네. 우리/저희 사귀어요. Like we're dating? Yeah. We are.": function(message){
+		"사귀는 거 같다고요? 네. 저희 사귀어요.": function(message){
 			n(message);
 			m(". . .");
 			n(". . .");
@@ -65,28 +65,28 @@ function Tutor_Seeing(message){
 			m(". . .");
 			Threat_School();
 		},
-		"그냥 I just meant meeting Jack.": function(message){ // 그냥 논다는 뜻이었어요.
+		"그냥 잭이랑 만나서 논다고요.": function(message){
 			n(message);
-			m("알겠어. Okay. Just being clear about some things."); // 그냥 몇 가지를 명확하게 하는거야. 
+			m("알겠어. Okay. Just being clear about some things."); // 그냥 몇 가지를 명확/확실하게 하는거야. 
 			n("네.");
 			m(". . .");
-			m("클레어 엄청 귀엽던데. Claire's really cute.");
+			m("클레어 엄청 귀엽던데.");
 			n("그래요. Sure.");
-			m("She has perky breasts."); // 탄력있는 가슴...
+			m("가슴도 탄력있고. She has perky breasts."); // 탄력있는 가슴...
 			Threat_Tutor();
 		},
-		"우리/저희. 남친. 사이. 아니에요. We're. Not. Boyfriends.": function(message){
+		"저희. 남친. 사이. 아니에요. We're. Not. Boyfriends.": function(message){
 			n(message);
 			m(". . .");
 			m("알겠어. Okay.");
 			m("그런 사이라고 한 적 없지만... 알겠어. I never said you were, but... okay.");
-			n("우린/저흰 친구예요. We're friends.");
+			n("저흰 친구예요.");
 
 			if($.relationship=="friend"){
 				m("'좋은 친구'...");
 			}
 			if($.relationship=="best friend"){
-				m("절친한 친구..."); // 단짝 친구 라는 말을 쓰는 사람은 없겠지?
+				m("절친한 친구..."); // 단짝 친구 라는 말을 쓰는 사람은 없단다.
 			}
 
 			Threat_Tutor();
@@ -99,19 +99,19 @@ function Tutor_Matchmake(message){
 	n(message);
 	m("글쎄, 네가 그랬으면 좋겠다면/그걸 바란다면, 해줄[엮어줄] 수 있지! Well, if that's what you want, I could!");
 	n("안돼애애.");
-	m("Don't be shy! You're growing up to be a man.");
+	m("부끄러워하지 마렴! 넌 남자가 돼가고 있어. Don't be shy! You're growing up to be a man.");
 	m("그리고 엄마한테 손주들을 많이 [낳아줄거라고/남겨줄거라고]. And you're going to give me lots of grandkids.");
 
 	Choose({
 		"그만하세요! 아직 클레어를 만나보지도 않았다고요!": function(message){
 			n(message);
-			m("아직!");
+			m("아직!"); // 아직은!
 			m("내일 올 거야!"); // she's coming over tomorrow!
-			n("뭐라고요? 잭이랑 약속했는데--"); // What? But I promised Jack--
-			m("I ironed your best clothes. You'll make a good first impression.");
+			n("뭐라고요? 잭이랑 약속 잡았는데--"); // What? But I promised Jack--
+			m("네 가장 좋은 옷을 다림질해놓았단다. 넌 좋은 첫인상을 남길거야. I ironed your best clothes. You'll make a good first impression."); // tl awk
 			Threat_Tutor();
 		},
-		"그럴 확률은 50%예요. 전 바이거든요.The odds of that are 50-50, coz I'm bi.": function(message){
+		"그럴 확률은 50%예요. 전 바이거든요. The odds of that are 50-50, coz I'm bi.": function(message){
 
 			$.admit_bisexuality = true;
 
